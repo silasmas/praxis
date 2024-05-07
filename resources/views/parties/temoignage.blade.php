@@ -12,7 +12,7 @@
                         <p class="mb-5 display-28 display-md-26 display-lg-24">I don't know what else to say. I would gladly pay over 600 dollars for business. Keep up the excellent work. It's incredible. It's the perfect solution for our business.</p>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="me-3">
-                                <img src="img/avatar/avatar-06.jpg" class="rounded-circle" alt="...">
+                                <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
                             </div>
                             <div class="text-start">
                                 <h6 class="mb-0">Allena Jones</h6>
@@ -25,7 +25,7 @@
                         <p class="mb-5 display-28 display-md-26 display-lg-24">I am really satisfied with my business. Your company is truly upstanding and is behind its product 100%. Thank you for making it painless, pleasant and most of all hassle free!</p>
                         <div class="d-flex justify-content-center align-items-center mt-4">
                             <div class="me-3">
-                                <img src="img/avatar/avatar-07.jpg" class="rounded-circle" alt="...">
+                                <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
                             </div>
                             <div class="text-start">
                                 <h6 class="mb-0">Gregi Ambrose</h6>
@@ -38,7 +38,7 @@
                         <p class="mb-5 display-28 display-md-26 display-lg-24">Thanks to business, we've just launched our 5th website! Thank you so much for your help. I don't always clop, but when I do, it's because of business.</p>
                         <div class="d-flex justify-content-center align-items-center mt-4">
                             <div class="me-3">
-                                <img src="img/avatar/avatar-08.jpg" class="rounded-circle" alt="...">
+                                <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
                             </div>
                             <div class="text-start">
                                 <h6 class="mb-0">Jose Matsuda</h6>

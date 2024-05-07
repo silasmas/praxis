@@ -39,7 +39,7 @@
                                         <a href="#!" class="team-icon fab fa-instagram"></a>
                                     </div>
                                     <a href="#!" class="team-inner-img">
-                                        <img src="{{ asset('assets/img/team/10.jpg') }} " class="rounded-circle" alt="...">
+                                        <img src="{{ asset('assets/img/team/09.jpg') }} " class="rounded-circle" alt="...">
                                     </a>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                         <a href="#!" class="team-icon fab fa-instagram"></a>
                                     </div>
                                     <a href="#!" class="team-inner-img">
-                                        <img src="{{ asset('assets/img/team/11.jpg') }} " class="rounded-circle" alt="...">
+                                        <img src="{{ asset('assets/img/team/09.jpg') }} " class="rounded-circle" alt="...">
                                     </a>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                         <a href="#!" class="team-icon fab fa-instagram"></a>
                                     </div>
                                     <a href="#!" class="team-inner-img">
-                                        <img src="{{ asset('assets/img/team/12.jpg') }} " class="rounded-circle" alt="...">
+                                        <img src="{{ asset('assets/img/team/09.jpg') }} " class="rounded-circle" alt="...">
                                     </a>
                                 </div>
                             </div>
