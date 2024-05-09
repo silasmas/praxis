@@ -34,12 +34,12 @@
                                     <div class="col-md-11 col-lg-6 mb-2-9 mb-lg-0 position-relative">
                                         <div class="row">
                                             <div class="col-6 mt-n2-9">
-                                                <img src="{{asset('assets/img/sante/about.jpg')}}"
+                                                <img src="{{ asset('assets/img/content/about-06.jpg') }}"
                                                     class="border-radius-10 wow fadeInUp tilt" alt=""
                                                     data-wow-delay="200ms">
                                             </div>
                                             <div class="col-6">
-                                                <img src="{{asset('assets/img/sante/form.jpg')}}"
+                                                <img src="{{ asset('assets/img/content/about-07.jpg') }}"
                                                     class="border-radius-10 wow fadeInUp tilt" alt=""
                                                     data-wow-delay="400ms">
                                             </div>
@@ -50,7 +50,7 @@
                                             <div class="title-style2 text-start">
                                                 <span class="sub-title">Parlons de nous</span>
                                             </div>
-                                            <h2 class="h1 mb-1-9 fw-bold">GLODEMAP</h2>
+                                            <h2 class="h1 mb-1-9 fw-bold">Praxis</h2>
                                             <p class="mb-1-9">
                                                 GLODEMAP est une société de droit congolais existant depuis
                                                 2017.
@@ -78,20 +78,9 @@
                                                         questions.</strong></span>
                                             </div> --}}
                                             <div class="border-bottom mb-1-9 pb-1-9">
-                                                <h5 class="d-inline-block h6 me-4 mb-0">(+243) 898552773
-                                                </h5>
-                                                <div class="d-inline-block me-4 align-top"><strong
-                                                        class="font-weight-700 text-primary">ou</strong>
-                                                </div>
-                                                <h5 class="d-inline-block h6 mb-0"><a href="#!">ptuzitana@gmail.com</a>
-                                                </h5>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0"><span class="font-weight-700 d-block">TUZITANA KAZOLA
-                                                        Patsheley</span>CEO de la compagnie</p>
-                                                <div>
-                                                    <img src="{{asset('assets/img/content/sign.png') }}" alt="...">
-                                                </div>
+                                                <h5 class="d-inline-block h6 me-4 mb-0">@lang("info.titre.phone") </h5>
+                                                <div class="d-inline-block me-4 align-top"><strong class="font-weight-700 text-primary">ou</strong></div>
+                                                <h5 class="d-inline-block h6 mb-0"><a href="#!">@lang("info.titre.mail")</a></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -106,12 +95,12 @@
                                     <div class="col-md-11 col-lg-6 mb-2-9 mb-lg-0 position-relative">
                                         <div class="row">
                                             <div class="col-6 mt-n2-9">
-                                                <img src="{{asset('assets/img/sante/vision.jpg')}}"
+                                                <img src="{{asset('assets/img/team/t1.jpg')}}"
                                                     class="border-radius-10 wow fadeInUp tilt" alt=""
                                                     data-wow-delay="200ms">
                                             </div>
                                             <div class="col-6">
-                                                <img src="{{asset('assets/img/sante/form.jpg')}}"
+                                                <img src="{{asset('assets/img/team/t2.jpg')}}"
                                                     class="border-radius-10 wow fadeInUp tilt" alt=""
                                                     data-wow-delay="400ms">
                                             </div>
@@ -135,21 +124,7 @@
                                                 pour mes études, placé sous la tutelle de mon oncle Wamba Luzolo. C'est
                                                 avec son soutien que j'ai obtenu mon diplôme d'État (bac) en mécanique
                                                 générale à l'institut ITP Matadi en 2006.
-
-                                                <button type="button" class="butn-style1" data-bs-toggle="modal"
-                                                    data-bs-target="#scrollable">
-                                                    Lire la suite
-                                                </button>
                                             </p>
-                                            <div class="border-bottom mb-1-9 pb-1-9">
-                                                <h5 class="d-inline-block h6 me-4 mb-0">(+243) 898552773
-                                                </h5>
-                                                <div class="d-inline-block me-4 align-top"><strong
-                                                        class="font-weight-700 text-primary">ou</strong>
-                                                </div>
-                                                <h5 class="d-inline-block h6 mb-0"><a href="#!">ptuzitana@gmail.com</a>
-                                                </h5>
-                                            </div>
                                             <div class="d-flex justify-content-between">
                                                 <p class="mb-0"><span class="font-weight-700 d-block">TUZITANA KAZOLA
                                                         Patsheley</span>CEO de la compagnie</p>
@@ -181,21 +156,21 @@
                     <div>
                         <h3 class="font-weight-600 display-14 display-sm-12 display-lg-10 text-primary"><span
                                 class="countup">100</span>k</h3>
-                        <span class="fw-bold text-uppercase">Clients</span>
+                        <span class="fw-bold text-uppercase">Etudiants</span>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3 mb-1-6 mb-lg-0 wow fadeInUp" data-wow-delay="200ms">
                     <div>
                         <h3 class="font-weight-600 display-14 display-sm-12 display-lg-10 text-primary"><span
                                 class="countup">3</span>+</h3>
-                        <span class="fw-bold text-uppercase">Branches</span>
+                        <span class="fw-bold text-uppercase">Sessions</span>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="300ms">
                     <div>
                         <h3 class="font-weight-600 display-14 display-sm-12 display-lg-10 text-primary"><span
-                                class="countup">100</span>k</h3>
-                        <span class="fw-bold text-uppercase">Employées</span>
+                                class="countup">100</span></h3>
+                        <span class="fw-bold text-uppercase">Enseignants</span>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="400ms">
@@ -213,36 +188,40 @@
 <!-- EXTRA
 ================================================== -->
 <section class="vision-changebg owl-carousel owl-theme py-0 bg-img cover-background" data-overlay-dark="0"
-    data-background="assets/img/bg/bg-10.jpg">
+    data-background="{{ asset('assets/img/banner/a2.jpg') }}">
     <div class="vision-wrapper bg-img cover-background" data-overlay-dark="5"
-        data-background="assets/img/sante/approche.jpg">
+        data-background="{{ asset('assets/img/banner/a2.jpg') }}">
         <div class="vision-content">
-            <h4 class="text-white mb-3 font-weight-500">Notre approche</h4>
-            <p class="mb-0 text-white">The modern world is in a continuous movement and people everywhere are looking.
+            <h4 class="text-white mb-3 font-weight-500">Qu'est-ce qui nous a interpellé?</h4>
+            <p class="mb-0 text-white">
+                La foi chrétienne biblique est remplacée par la religion centrée sur l'homme, qui a emprunter le nom de "Jésus" et les termes qui appartiennent au christianisme, à l'exception de l'évangile lui-même. Cette religion trompe beaucoup par son apparence.
             </p>
         </div>
     </div>
     <div class="vision-wrapper bg-img cover-background" data-overlay-dark="5"
-        data-background="assets/img/sante/vision.jpg">
+        data-background="{{ asset('assets/img/banner/a1.jpg') }}">
         <div class="vision-content">
             <h4 class="text-white mb-3 font-weight-500">Notre Vision</h4>
-            <p class="mb-0 text-white">The modern world is in a continuous movement and people everywhere are looking.
+            <p class="mb-0 text-white">
+                Notre vision est d'élever une nouvelle génération des leaders religieux et sociaux sur le continent africain avec une vision du monde centrée sur christ
             </p>
         </div>
     </div>
     <div class="vision-wrapper bg-img cover-background" data-overlay-dark="5"
-        data-background="assets/img/sante/mission.jpg">
+        data-background="{{ asset('assets/img/banner/a3.jpg') }}">
         <div class="vision-content">
             <h4 class="text-white mb-3 font-weight-500">Notre Mission</h4>
-            <p class="mb-0 text-white">The modern world is in a continuous movement and people everywhere are looking.
+            <p class="mb-0 text-white">
+                Notre mission est de rappeler l'église à l'évangile de christ et à une vie centrée sur sa parole
             </p>
         </div>
     </div>
     <div class="vision-wrapper bg-img cover-background" data-overlay-dark="5"
-        data-background="assets/img/sante/valeur.jpg">
+        data-background="{{ asset('assets/img/banner/a4.jpg') }}">
         <div class="vision-content">
             <h4 class="text-white mb-3 font-weight-500">Nos Valeurs</h4>
-            <p class="mb-0 text-white">The modern world is in a continuous movement and people everywhere are looking.
+            <p class="mb-0 text-white">
+                Intégrité - Excellence - Fraternité - Communion - Humilité
             </p>
         </div>
     </div>

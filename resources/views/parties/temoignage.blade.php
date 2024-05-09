@@ -1,8 +1,8 @@
 <section class="mx-xl-5 border-radius-xl-10 bg-light-gray">
     <div class="container">
         <div class="mb-2-6 mb-md-5 mx-auto text-center wow fadeIn w-md-90 w-lg-70 w-xl-60 w-xxl-50" data-wow-delay="200ms">
-            <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Testimonial</span>
-            <h2 class="h1 mb-0">What our customers are saying and what they think</h2>
+            <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Temoignages</span>
+            <h2 class="h1 mb-0">Ce que disent et pensent nos étudiants</h2>
         </div>
         <div class="row justify-content-center wow fadeIn" data-wow-delay="200ms">
             <div class="col-lg-8 col-xl-7 text-center">

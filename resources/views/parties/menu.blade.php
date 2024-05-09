@@ -38,10 +38,10 @@
                             <ul class="navbar-nav align-items-lg-center ms-auto" id="nav" style="display: none;">
                                 <li class="{{ Route::current()->getName() == 'home' ? 'active' : ''}}"><a href="{{ route('home') }}">Accueil</a></li>
                                 <li class="{{ Route::current()->getName() == 'about' ? 'active' : ''}}"><a href="{{ route('about') }}">Qui sommes-nous</a></li>
-                                <li class="{{ Route::current()->getName() == 'pays' ? 'active' : ''}}"><a href="{{ route('activites') }}">Nos activités</a></li>
-                                <li class="{{ Route::current()->getName() == 'pays' ? 'active' : ''}}"><a href="{{ route('teacher') }}">Nos enseignants</a></li>
-                                <li class="{{ Route::current()->getName() == 'pays' ? 'active' : ''}}"><a href="{{ route('articles') }}">Articles</a></li>
-                                <li class="{{ Route::current()->getName() == 'pays' ? 'active' : ''}}"><a href="{{ route('contact') }}">Contact</a></li>
+                                <li class="{{ Route::current()->getName() == 'activites' ? 'active' : ''}}"><a href="{{ route('activites') }}">Nos activités</a></li>
+                                <li class="{{ Route::current()->getName() == 'teacher' ? 'active' : ''}}"><a href="{{ route('teacher') }}">Nos enseignants</a></li>
+                                <li class="{{ Route::current()->getName() == 'articles' ? 'active' : ''}}"><a href="{{ route('articles') }}">Articles</a></li>
+                                <li class="{{ Route::current()->getName() == 'contact' ? 'active' : ''}}"><a href="{{ route('contact') }}">Contact</a></li>
 
                             </ul>
                             <!-- end menu area -->

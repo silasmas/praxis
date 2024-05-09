@@ -12,12 +12,12 @@
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-5">
                                 <div class="title-style3 mb-3">
-                                    <span>Award Winning Company</span>
+                                    <span>@lang('info.titre.slogan')</span>
                                 </div>
                                 <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">We Make Your Business Easy & Fast</h1>
                                 <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
-                                <a href="about.html" class="butn-style1 me-2 my-1 my-sm-0">Learn more</a>
-                                <a href="contact.html" class="butn-style1 secondary my-1 my-sm-0">Contact us</a>
+                                <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
+                                <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
                         </div>
                     </div>
@@ -28,12 +28,12 @@
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-5">
                                 <div class="title-style3 mb-3">
-                                    <span>Award Winning Company</span>
+                                    <span>@lang('info.titre.slogan')</span>
                                 </div>
                                 <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Making Your Business Idea Come True</h1>
                                 <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
-                                <a href="about.html" class="butn-style1 me-2 my-1 my-sm-0">Learn more</a>
-                                <a href="contact.html" class="butn-style1 secondary my-1 my-sm-0">Contact us</a>
+                                <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
+                                <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
                         </div>
                     </div>
@@ -44,12 +44,12 @@
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-5">
                                 <div class="title-style3 mb-3">
-                                    <span>Award Winning Company</span>
+                                    <span>@lang('info.titre.slogan')</span>
                                 </div>
                                 <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Helping You Solve Your Problems</h1>
                                 <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
-                                <a href="about.html" class="butn-style1 me-2 my-1 my-sm-0">Learn more</a>
-                                <a href="contact.html" class="butn-style1 secondary my-1 my-sm-0">Contact us</a>
+                                <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
+                                <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
                         </div>
                     </div>
@@ -75,23 +75,27 @@
                     </div>
                     <div class="col-lg-6 mt-lg-0 wow fadeIn" data-wow-delay="200ms">
                         <div class="ps-lg-3 ps-xl-5">
-                            <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">let's talk about us</span>
-                            <h2 class="h1 mb-1-9 fw-bold">Business From Many Years</h2>
-                            <p class="mb-1-9">The groups serve every single significant segment. of the business. Our work draw on over 25+ years of experience, conveyed by 5,800 experts on the planet's most significant monetary focuses.</p>
+                            <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">Parlons de nous</span>
+                            <h2 class="h1 mb-1-9 fw-bold">Qu'est-ce que c'est Paxis??</h2>
+                            <p class="mb-1-9">
+                                Prxis est uen école biblique et évangélique faisant partie de 5 branches de Gospel Influence Ministries. <br>
+                                Retrouvez nos vidéos  sur YouTube pour nous connaitre d'avantage via notre chaine : Gospel Influence Ministries
+
+                            </p>
                             <div class="mb-1-9">
-                                <span>Call us 24/7. We can answer for <strong class="lead font-weight-600">all your questions.</strong></span>
+                                <span>Appelez-nous 24h/24 et 7j/7. Nous pouvons répondre à<strong class="lead font-weight-600">toutes vos questions.</strong></span>
                             </div>
                             <div class="border-bottom mb-1-9 pb-1-9">
-                                <h5 class="d-inline-block h6 me-4 mb-0">(+44) 123 456 789</h5>
-                                <div class="d-inline-block me-4 align-top"><strong class="font-weight-700 text-primary">or</strong></div>
-                                <h5 class="d-inline-block h6 mb-0"><a href="#!">inquiry@youremail.com</a></h5>
+                                <h5 class="d-inline-block h6 me-4 mb-0">@lang("info.titre.phone") </h5>
+                                <div class="d-inline-block me-4 align-top"><strong class="font-weight-700 text-primary">ou</strong></div>
+                                <h5 class="d-inline-block h6 mb-0"><a href="#!">@lang("info.titre.mail")</a></h5>
                             </div>
-                            <div class="d-flex justify-content-between">
+                            {{-- <div class="d-flex justify-content-between">
                                 <p class="mb-0"><span class="font-weight-700 d-block">Keir Prestonly</span>CEO of company</p>
                                 <div>
                                     <img src="img/content/sign.png" alt="...">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -107,8 +111,8 @@
                     <div class="col-lg-4 wow fadeIn" data-wow-delay="200ms">
                         <div class="row g-0 align-items-center h-100">
                             <div class="col-md-12">
-                                <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">our portfolio</span>
-                                <h2 class="h1 mb-1-9 mb-lg-0 fw-bold">Our Work With Innovative Ideas</h2>
+                                <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">Notre portfolio</span>
+                                <h2 class="h1 mb-1-9 mb-lg-0 fw-bold">Nos sessions réalisée</h2>
                             </div>
                         </div>
                     </div>
@@ -179,8 +183,8 @@
             <div class="container position-relative z-index-9">
 
                 <div class="mb-2-6 mb-md-5 mx-auto text-center wow fadeIn w-md-90 w-lg-70 w-xl-60 w-xxl-50" data-wow-delay="200ms">
-                    <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Our Blog</span>
-                    <h2 class="h1 mb-0">Our blog and news will solve all of your troubles</h2>
+                    <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Nos articles</span>
+                    <h2 class="h1 mb-0">Nos articles et nos actualités pour répondre vos questions</h2>
                 </div>
 
                 <div class="row g-xl-5 mt-n2-9">

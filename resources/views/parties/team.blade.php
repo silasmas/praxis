@@ -3,8 +3,8 @@
         <section>
             <div class="container">
                 <div class="mb-2-6 mb-md-5 mx-auto text-center wow fadeIn w-md-90 w-lg-70 w-xl-60 w-xxl-50" data-wow-delay="200ms">
-                    <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Our Team</span>
-                    <h2 class="h1 mb-0">The top-notch our team, will do anything for you.</h2>
+                    <span class="text-uppercase d-block mb-2 font-weight-600 small text-primary letter-spacing-2">Nos Enseignant</span>
+                    <h2 class="h1 mb-0">Notre équipe des enseignants pour notre formation.</h2>
                 </div>
                 <div class="row mt-n1-9">
                     <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeIn" data-wow-delay="200ms">

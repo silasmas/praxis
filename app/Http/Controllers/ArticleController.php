@@ -21,19 +21,19 @@ class ArticleController extends Controller
     }
     public function activites()
     {
-        return view('pages.accueil');
+        return view('pages.activites');
     }
     public function teacher()
     {
-        return view('pages.accueil');
+        return view('pages.teacher');
     }
     public function articles()
     {
-        return view('pages.accueil');
+        return view('pages.articles');
     }
     public function contact()
     {
-        return view('pages.accueil');
+        return view('pages.contact');
     }
 
     /**
