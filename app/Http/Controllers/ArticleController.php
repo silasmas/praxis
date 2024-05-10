@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorearticleRequest;
 use App\Http\Requests\UpdatearticleRequest;
 use App\Models\article;
+use App\Models\enseignant;
 
 class ArticleController extends Controller
 {
@@ -13,11 +14,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('pages.accueil');
+        $profs = enseignant::get();
+        return view('pages.accueil', compact('profs'));
     }
     public function about()
     {
-        return view('pages.about');
+        $profs = enseignant::get();
+        return view('pages.about', compact('profs'));
     }
     public function activites()
     {
@@ -25,7 +28,8 @@ class ArticleController extends Controller
     }
     public function teacher()
     {
-        return view('pages.teacher');
+        $profs = enseignant::get();
+        return view('pages.teacher', compact('profs'));
     }
     public function articles()
     {

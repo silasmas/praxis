@@ -13,8 +13,20 @@ data-background="{{ asset('assets/img/banner/bannier.jpg') }}">
                             @case("about")
                                 Qui sommes-nous
                                 @break
-                            @case("services")
-                                Nos Services
+                            @case("activites")
+                                Nos Activités
+                                @break
+                            @case("teacher")
+                                Nos professeurs
+                                @break
+                            @case("articles")
+                                Nos articles
+                                @break
+                            @case("viewteacher")
+                                Details du professeur
+                                @break
+                            @case("viewarticle")
+                                Detail d'un article
                                 @break
                             @case("contact")
                                 Nous contacter
@@ -27,14 +39,23 @@ data-background="{{ asset('assets/img/banner/bannier.jpg') }}">
                 </div>
                 <h1 class="text-white mb-0 text-shadow-large">
                     @switch(Route::current()->getName())
-                    @case("home")
-
+                    @case("teacher")
+                    Nous vous presentons nos professeurs.
                         @break
                     @case("about")
                         Nous vous parlons de qui nous sommes.
                         @break
-                    @case("services")
-                        Nous vous présentons nos différents services.
+                    @case("activites")
+                        Nous vous présentons les activités de sessions passée.
+                        @break
+                        @case("articles")
+                        Nous vous présentons nos articles.
+                        @break
+                    @case("viewteacher")
+                    Nous vous présentons les informations detaillées de nos professeurs.
+                        @break
+                    @case("viewarticle")
+                    Nous vous présentons les informations detaillées de nos artiles.
                         @break
                     @case("contact")
                         Nous vous informons sur les possibilités de nous avoir.

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\newsletter;
-use App\Http\Requests\StorenewsletterRequest;
 use App\Http\Requests\UpdatenewsletterRequest;
+use App\Models\newsletter;
+use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
@@ -27,9 +27,21 @@ class NewsletterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorenewsletterRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . newsletter::class],
+        ]);
+        $rep = newsletter::create([
+            'email' => $request->email,
+        ]);
+
+        if ($rep) {
+            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi"]);
+        } else {
+            return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
+
+        }
     }
 
     /**

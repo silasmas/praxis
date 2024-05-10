@@ -62,32 +62,30 @@
                     <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="400ms">
                         <h3>Raccourcis</h3>
                         <ul class="ps-0 mb-0">
-                            <li><a href="services.html">Qui sommes-nous</a></li>
-                            <li><a href="team.html">Nos activités</a></li>
-                            <li><a href="contact.html">Nos enseignants</a></li>
+                            <li><a href="{{ route('about') }}">Qui sommes-nous</a></li>
+                            <li><a href="{{ route('activites') }}">Nos activités</a></li>
+                            <li><a href="{{ route('teacher') }}">Nos enseignants</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="500ms">
                         <h3>Raccourcis</h3>
                         <ul class="ps-0 mb-0">
-                            <li><a href="portfolio.html">Arcticles</a></li>
-                            <li><a href="our-core-values.html">Contact</a></li>
+                            <li><a href="{{ route('articles') }}">Arcticles</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="600ms">
                         <h3>Newsletter</h3>
-                        <form class="quform" action="quform/newsletter-two.php" method="post"
-                            enctype="multipart/form-data" onclick="">
+                        <form class="quform" id="newsletter">
 
                             <div class="quform-elements">
-
                                 <div class="row">
                                     <!-- Begin Text input element -->
                                     <div class="col-md-12">
                                         <div class="quform-element mb-0">
                                             <div class="quform-input">
-                                                <input class="form-control" id="email_address" type="text"
-                                                    name="email_address" placeholder="Abonnez-vous avec nous" />
+                                                <input class="form-control" id="email" type="text"
+                                                    name="email" placeholder="Abonnez-vous avec nous" />
                                             </div>
                                         </div>
                                     </div>

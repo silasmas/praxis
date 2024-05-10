@@ -82,10 +82,76 @@
 <script src="{{ asset('assets/quform/js/plugins.js') }} "></script>
 
 <!-- form scripts js -->
-<script src="{{ asset('assets/quform/js/scripts.js') }} "></script>
+{{-- <script src="{{ asset('assets/quform/js/scripts.js') }} "></script> --}}
+<script src="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
 
 <!-- all js include end -->
 
+<script>
+    $("#newsletter").on("submit", function (e) {
+            e.preventDefault();
+            //  alert("register")
+            add("#newsletter", 'POST', 'addNewsletter')
+    });
+    $("#formContact").on("submit", function (e) {
+            e.preventDefault();
+            //  alert("register")
+            add("#formContact", 'POST', 'addNewMessage')
+    });
+    $("#formContactProf").on("submit", function (e) {
+            e.preventDefault();
+            add("#formContactProf", 'POST', '../addNewMessageProf')
+    });
+function add(form, mothode, url) {
+        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        var f = form;
+        var u = url;
+        Swal.fire({
+            title: 'Merci de patienter...',
+            icon: 'info'
+        })
+        $.ajax({
+            url: u,
+            method: mothode,
+            data: $(f).serialize(),
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            success: function (data) {
+
+                if (!data.reponse) {
+                    Swal.fire({
+                        title: data.msg,
+                        icon: 'error'
+                    })
+                } else {
+                    Swal.fire({
+                        title: data.msg,
+                        icon: 'success'
+                    })
+                    $(f)[0].reset();
+                    // actualiser();
+                }
+
+            },
+            error: function(xhr) {
+            var errors = xhr.responseJSON.errors;
+            var errorMessage = '';
+            $.each(errors, function(key, value) {
+                errorMessage += value + '\n';
+            });
+            Swal.fire({
+                title: 'Erreur de validation',
+                text:errorMessage,
+                icon: 'error'
+                    })
+             }
+        });
+    }
+function actualiser() {
+        location.reload();
+    }
+</script>
 </body>
 
 </html>

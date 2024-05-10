@@ -13,7 +13,7 @@
     {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> --}}
     <meta name="keywords" content="Le portail numerique">
     <meta name="description" content="Praxis - Le portail numerique">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- title  -->
     <title> {{config('app.name') }} | {{isset($titre)?$titre:""}}</title>
 
@@ -37,6 +37,7 @@
 
     <!-- custom css -->
     <link href="{{ asset('assets/css/custom.css') }} " rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.min.css') }}">
 
 </head>
 

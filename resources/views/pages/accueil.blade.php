@@ -76,7 +76,7 @@
                     <div class="col-lg-6 mt-lg-0 wow fadeIn" data-wow-delay="200ms">
                         <div class="ps-lg-3 ps-xl-5">
                             <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">Parlons de nous</span>
-                            <h2 class="h1 mb-1-9 fw-bold">Qu'est-ce que c'est Paxis??</h2>
+                            <h2 class="h1 mb-1-9 fw-bold">Qu'est-ce que c'est Praxis??</h2>
                             <p class="mb-1-9">
                                 Prxis est uen école biblique et évangélique faisant partie de 5 branches de Gospel Influence Ministries. <br>
                                 Retrouvez nos vidéos  sur YouTube pour nous connaitre d'avantage via notre chaine : Gospel Influence Ministries

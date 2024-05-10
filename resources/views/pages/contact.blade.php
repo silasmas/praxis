@@ -58,10 +58,9 @@
                     <div class="col-lg-10 wow fadeIn" data-wow-delay="400ms">
                         <div class="primary-shadow bg-white p-1-6 p-sm-2-9 rounded z-index-9 position-relative">
                             <h2 class="mb-1-9">Ecrivez-nous</h2>
-                            <form class="contact quform" action="quform/contact.php" method="post" enctype="multipart/form-data" onclick="">
+                            <form class="contact quform" id="formContact">
                                 <div class="quform-elements">
                                     <div class="row">
-
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
@@ -76,9 +75,9 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
-                                                <label for="email">Your Email <span class="quform-required">*</span></label>
+                                                <label for="email">Votre Email <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
-                                                    <input class="form-control" id="email" type="text" name="email" placeholder="Your email here" />
+                                                    <input class="form-control" id="email" type="text" name="email" placeholder="Votre email" />
                                                 </div>
                                             </div>
                                         </div>
@@ -87,9 +86,9 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
-                                                <label for="subject">Your Subject <span class="quform-required">*</span></label>
+                                                <label for="subject">Objet du message<span class="quform-required">*</span></label>
                                                 <div class="quform-input">
-                                                    <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here" />
+                                                    <input class="form-control" id="subject" type="text" name="subject" placeholder="Objet de votre message" />
                                                 </div>
                                             </div>
                                         </div>
@@ -98,9 +97,9 @@
                                         <!-- Begin Text input element -->
                                         <div class="col-md-6">
                                             <div class="quform-element form-group">
-                                                <label for="phone">Contact Number</label>
+                                                <label for="phone">Numéro de contact</label>
                                                 <div class="quform-input">
-                                                    <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here" />
+                                                    <input class="form-control" id="phone" type="text" name="phone" placeholder="Votre numéro de contact" />
                                                 </div>
                                             </div>
                                         </div>
@@ -109,37 +108,18 @@
                                         <!-- Begin Textarea element -->
                                         <div class="col-md-12">
                                             <div class="quform-element form-group">
-                                                <label for="message">Message <span class="quform-required">*</span></label>
+                                                <label for="message">Votre Message <span class="quform-required">*</span></label>
                                                 <div class="quform-input">
-                                                    <textarea class="form-control h-100" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
+                                                    <textarea class="form-control h-100" id="message" name="message" rows="3" placeholder="Laissez-nous votre message"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- End Textarea element -->
 
-                                        <!-- Begin Captcha element -->
-                                        <div class="col-md-12">
-                                            <div class="quform-element">
-                                                <div class="form-group">
-                                                    <div class="quform-input">
-                                                        <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="quform-captcha">
-                                                        <div class="quform-captcha-inner">
-                                                            <img src="quform/images/captcha/courier-new-light.png" alt="...">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Captcha element -->
-
                                         <!-- Begin Submit button -->
                                         <div class="col-md-12">
                                             <div class="quform-submit-inner">
-                                                <button class="butn-style1" type="submit"><span>Send Message</span></button>
+                                                <button class="butn-style1" type="submit"><span>Envoyer</span></button>
                                             </div>
                                             <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
                                         </div>
