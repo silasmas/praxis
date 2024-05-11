@@ -12,10 +12,9 @@
                 </p>
                 <div class="social-icons2">
                     <ul class="ps-0 mb-0">
-                        <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="@lang("info.titre.fb")"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="@lang("info.titre.youtube")"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="@lang("info.titre.insta")"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <img src="img/shape/03.png" class="position-absolute top-n5 right-n5" alt="...">
+                            <img src="{{ asset('assets/img/shape/03.png') }}" class="position-absolute top-n5 right-n5" alt="...">
                         </div>
                     </div>
                 </div>
