@@ -172,12 +172,10 @@
                             <span>Suive-nous</span>
                         </div>
                         <ul class="social-icons-style1 ps-0">
-                            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
+                            <li><a href="@lang("info.titre.fb")"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="@lang("info.titre.youtube")"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="@lang("info.titre.insta")"><i class="fab fa-instagram"></i></a></li>
+                         </ul>
 
                     </div>
                     <div class="bg-img secondary-overlay cover-background rounded wow fadeInUp" data-wow-delay="700ms" data-overlay-dark="85" data-background="{{ asset('assets/img/blog/photo8.jpg') }}">
