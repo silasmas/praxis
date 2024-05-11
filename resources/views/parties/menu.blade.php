@@ -39,7 +39,7 @@
                                 <li class="{{ Route::current()->getName() == 'home' ? 'active' : ''}}"><a href="{{ route('home') }}">Accueil</a></li>
                                 <li class="{{ Route::current()->getName() == 'about' ? 'active' : ''}}"><a href="{{ route('about') }}">Qui sommes-nous</a></li>
                                 <li class="{{ Route::current()->getName() == 'activites' ? 'active' : ''}}"><a href="{{ route('activites') }}">Nos activités</a></li>
-                                <li class="{{ Route::current()->getName() == 'teacher' ||"viewteacher" ? 'active' : ''}}"><a href="{{ route('teacher') }}">Nos enseignants</a></li>
+                                <li class="{{ Route::current()->getName() == 'teacher'||Route::current()->getName() =="viewteacher" ? 'active' : ''}}"><a href="{{ route('teacher') }}">Nos enseignants</a></li>
                                 <li class="{{ Route::current()->getName() == 'articles' ? 'active' : ''}}"><a href="{{ route('articles') }}">Articles</a></li>
                                 <li class="{{ Route::current()->getName() == 'contact' ? 'active' : ''}}"><a href="{{ route('contact') }}">Contact</a></li>
 
