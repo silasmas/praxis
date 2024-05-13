@@ -14,7 +14,9 @@ class EnseignantController extends Controller
      */
     public function index()
     {
-        //
+        $pros = enseignant::get();
+        return view("admin.pages.dashboard", compact("profs"));
+
     }
 
     /**

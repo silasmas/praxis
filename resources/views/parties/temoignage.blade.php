@@ -9,18 +9,22 @@
                 <div class="testimonial-style1 owl-carousel owl-theme">
                     <div>
                         <i class="ti-quote-left display-10 text-secondary mb-4 d-block"></i>
-                        <p class="mb-5 display-28 display-md-26 display-lg-24">I don't know what else to say. I would gladly pay over 600 dollars for business. Keep up the excellent work. It's incredible. It's the perfect solution for our business.</p>
+                        <p class="mb-5 display-28 display-md-26 display-lg-24">
+                           {{ Str::limit(__('info.temoignage.t1'), 500, '...') }}
+
+
+                        </p>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="me-3">
                                 <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
                             </div>
                             <div class="text-start">
-                                <h6 class="mb-0">Allena Jones</h6>
-                                <span class="small">Real Estate Assessor</span>
+                                <h6 class="mb-0">Marla Feza</h6>
+                                <span class="small">Etudiante</span>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    {{-- <div>
                         <i class="ti-quote-left display-10 text-secondary mb-3 d-block"></i>
                         <p class="mb-5 display-28 display-md-26 display-lg-24">I am really satisfied with my business. Your company is truly upstanding and is behind its product 100%. Thank you for making it painless, pleasant and most of all hassle free!</p>
                         <div class="d-flex justify-content-center align-items-center mt-4">
@@ -45,7 +49,7 @@
                                 <span class="small">Mystery Shopper</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

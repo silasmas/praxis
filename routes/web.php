@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EnseignantController;
@@ -32,13 +33,19 @@ Route::post('addNewMessage', [ContactController::class, 'store'])->name('addNewM
 Route::post('addNewMessageProf', [EnseignantController::class, 'store'])->name('addNewMessageProf');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/admin_articles', [ArticleController::class, 'index'])->name('admin_articles');
+    Route::get('/admin_profs', [EnseignantController::class, 'index'])->name('admin_profs');
+    Route::get('/admin_messages', [ContactController::class, 'index'])->name('admin_messages');
+    Route::get('/admin_activites', [ActiviteController::class, 'index'])->name('admin_activites');
+    Route::get('/admin_neswsletter', [NewsletterController::class, 'index'])->name('admin_neswsletter');
 });
 
 require __DIR__ . '/auth.php';

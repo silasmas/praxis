@@ -126,8 +126,8 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Business Team</a></h3>
-                                            <span class="text-white">Business</span>
+                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos etudiants</a></h3>
+                                            <span class="text-white">Collation</span>
                                         </div>
                                     </div>
                                 </div>
@@ -137,8 +137,8 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Business Advice</a></h3>
-                                            <span class="text-white">Finance</span>
+                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos etudiants</a></h3>
+                                            <span class="text-white">Collation</span>
                                         </div>
                                     </div>
                                 </div>
@@ -148,8 +148,8 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Our Executives</a></h3>
-                                            <span class="text-white">Marketing</span>
+                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Notre équipe</a></h3>
+                                            <span class="text-white">La team</span>
                                         </div>
                                     </div>
                                 </div>
@@ -159,8 +159,8 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Team Proposal</a></h3>
-                                            <span class="text-white">Business</span>
+                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos Professeurs</a></h3>
+                                            <span class="text-white">Professeurs</span>
                                         </div>
                                     </div>
                                 </div>
