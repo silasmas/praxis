@@ -14,8 +14,10 @@
                                 <div class="title-style3 mb-3">
                                     <span>@lang('info.titre.slogan')</span>
                                 </div>
-                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">We Make Your Business Easy & Fast</h1>
-                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
+                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Une nouvelle génération des leaders christocentriques</h1>
+                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">
+                                    Nous travaillons pour élever une nouvelle génération de dirigeants religieux et sociaux pour influencer les villes du continent africain avec l’Évangile de la suprématie du Christ comme seule source de satisfaction pour tous.
+                                </p>
                                 <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
                                 <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
@@ -30,8 +32,11 @@
                                 <div class="title-style3 mb-3">
                                     <span>@lang('info.titre.slogan')</span>
                                 </div>
-                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Making Your Business Idea Come True</h1>
-                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
+                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Connaître Christ pour mieux le servir.
+                                </h1>
+                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">
+                                    Nous voulons fournir un enseignement et une prédication centrés sur le Christ à tous les croyants et dirigeants d’église d’Afrique subsaharienne afin de les influencer à glorifier Christ comme la source suprême de satisfaction.
+                                </p>
                                 <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
                                 <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
@@ -78,12 +83,18 @@
                             <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">Parlons de nous</span>
                             <h2 class="h1 mb-1-9 fw-bold">Qu'est-ce que c'est Praxis??</h2>
                             <p class="mb-1-9">
-                                Prxis est uen école biblique et évangélique faisant partie de 5 branches de Gospel Influence Ministries. <br>
-                                Retrouvez nos vidéos  sur YouTube pour nous connaitre d'avantage via notre chaine : Gospel Influence Ministries
+                                À la recherche d'une opportunité extraordinaire pour vous lancer dans des études théologiques de qualité, qui vous doteront d'une solide compréhension des Écritures et d'une vision profondément centrée sur Jésus Christ et son Évangile ?
+
+                                Ne cherchez plus loin ! Praxis est l'école théologique qu'il vous faut.
+
+                                Nous vous offrons une formation en théologie biblique et chrétienne qui vous permettra non seulement d'approfondir vos connaissances, mais aussi de devenir un serviteur efficace et fidèle, prêt à impacter votre communauté avec l'Évangile de la suprématie de la gloire de Dieu.
+                                Rejoignez-nous dès maintenant à Praxis et ouvrez-vous à une expérience exceptionnelle !
 
                             </p>
                             <div class="mb-1-9">
-                                <span>Appelez-nous 24h/24 et 7j/7. Nous pouvons répondre à<strong class="lead font-weight-600">toutes vos questions.</strong></span>
+                                <span>Nous sommes ouverts du lundi au vendredi de 8h00 à 17h00.
+                                    {{-- <strong class="lead font-weight-600">toutes vos questions.</strong> --}}
+                                </span>
                             </div>
                             <div class="border-bottom mb-1-9 pb-1-9">
                                 <h5 class="d-inline-block h6 me-4 mb-0">@lang("info.titre.phone") </h5>

@@ -15,11 +15,11 @@
                                 <h6>Qui</h6><span>Sommes-nous</span>
                             </div>
                         </li>
-                        <li class="tab2 ml-1-9"><span class="count display-1 alt-font font-weight-700">02</span>
+                        {{-- <li class="tab2 ml-1-9"><span class="count display-1 alt-font font-weight-700">02</span>
                             <div class="tab-box">
                                 <h6>Notre</h6><span>histoire</span>
                             </div>
-                        </li>
+                        </li> --}}
                         {{-- <li class="tab3"><span class="count display-1 alt-font font-weight-700">03</span>
                             <div class="tab-box">
                                 <h6>Growth</h6><span>Start to growth</span>
@@ -52,25 +52,12 @@
                                             </div>
                                             <h2 class="h1 mb-1-9 fw-bold">Praxis</h2>
                                             <p class="mb-1-9">
-                                                GLODEMAP est une société de droit congolais existant depuis
-                                                2017.
-                                                La société intègre des pratiques durables dans ses
-                                                opérations et des valeurs
-                                                contribuant ainsi positivement aux activités de ses
-                                                partenaires.
-                                                GLODEMAP propose 3 services : l'agence de douane, le
-                                                transport,
-                                                ainsi que la santé, et compte plus de 150 agents. Basée à
-                                                Kinshasa,
-                                                GLODEMAP possède différents bureaux en RD Congo, notamment à
-                                                Matadi, Kimpese,
-                                                Lufu, ainsi qu'à Pointe-Noire au Congo Brazzaville, et à
-                                                Luanda en Angola.
-                                                Nous plaçons les besoins et les désirs des clients au cœur
-                                                des décisions
-                                                commerciales garantit la satisfaction de la clientèle et
-                                                favorise la fidélité
-                                                à long terme.
+                                                À la recherche d'une opportunité extraordinaire pour vous lancer dans des études théologiques de qualité, qui vous doteront d'une solide compréhension des Écritures et d'une vision profondément centrée sur Jésus Christ et son Évangile ?
+
+                                                Ne cherchez plus loin ! Praxis est l'école théologique qu'il vous faut.
+
+                                                Nous vous offrons une formation en théologie biblique et chrétienne qui vous permettra non seulement d'approfondir vos connaissances, mais aussi de devenir un serviteur efficace et fidèle, prêt à impacter votre communauté avec l'Évangile de la suprématie de la gloire de Dieu.
+                                                Rejoignez-nous dès maintenant à Praxis et ouvrez-vous à une expérience exceptionnelle !
                                             </p>
                                             {{-- <div class="mb-1-9">
                                                 <span>Call us 24/7. We can answer for <strong

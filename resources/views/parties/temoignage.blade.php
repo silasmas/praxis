@@ -12,7 +12,9 @@
                         <p class="mb-5 display-28 display-md-26 display-lg-24">
                            {{ Str::limit(__('info.temoignage.t1'), 500, '...') }}
 
-
+                           <button type="button" class="butn-style1" data-bs-toggle="modal" data-bs-target="#scrollable">
+                            Lire la suite
+                            </button>
                         </p>
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="me-3">
@@ -54,4 +56,5 @@
             </div>
         </div>
     </div>
+    @include("parties.modale")
 </section>
