@@ -51,8 +51,10 @@
                                 <div class="title-style3 mb-3">
                                     <span>@lang('info.titre.slogan')</span>
                                 </div>
-                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Helping You Solve Your Problems</h1>
-                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">Working with customer realizing—that is, showing customers how to determine comparative issues later on.</p>
+                                <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Faire des disciples centrés sur Christ </h1>
+                                <p class="text-white mb-2-3 opacity8 display-md-28 w-lg-80">
+                                    Le défi actuel de l’Église n’est pas tant de faire des disciples que de faire des disciples centrés sur l’Évangile. La raison en est la disparition de l’Évangile lui-même, centré sur le Christ, de l’Église.  Elle a été remplacée par une religion centrée sur l’homme, qui a tellement emprunté au christianisme, à l’exception de l’Évangile lui-même, qu’elle en trompe beaucoup par son aspect pseudo-chrétien.  Jusqu’à présent, la précision dans l’exégèse et la prédication n’a jamais eu autant d’importance.
+                                </p>
                                 <a href="{{ route('about') }}" class="butn-style1 me-2 my-1 my-sm-0">Voir plus</a>
                                 <a href="{{ route('contact') }}" class="butn-style1 secondary my-1 my-sm-0">Nous contacter</a>
                             </div>
