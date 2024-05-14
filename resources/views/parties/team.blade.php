@@ -19,7 +19,7 @@
                                         <a href="{{ $p->insta }}" target="blank" class="team-icon fab fa-instagram"></a>
                                     </div>
                                     <a href="#!" class="team-inner-img">
-                                        <img src="{{ asset('assets/img/'.$p->profil) }} " class="rounded-circle" alt="...">
+                                        <img src="{{ asset('storage/'.$p->profil) }} " class="rounded-circle" alt="...">
                                     </a>
                                 </div>
                             </div>

@@ -137,7 +137,7 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos etudiants</a></h3>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">Nos etudiants</a></h3>
                                             <span class="text-white">Collation</span>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos etudiants</a></h3>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">Nos etudiants</a></h3>
                                             <span class="text-white">Collation</span>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Notre équipe</a></h3>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">Notre équipe</a></h3>
                                             <span class="text-white">La team</span>
                                         </div>
                                     </div>
@@ -170,7 +170,7 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="portfolio-single.html" class="text-white">Nos Professeurs</a></h3>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">Nos Professeurs</a></h3>
                                             <span class="text-white">Professeurs</span>
                                         </div>
                                     </div>

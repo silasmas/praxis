@@ -32,9 +32,7 @@ Route::post('addNewsletter', [NewsletterController::class, 'store'])->name('addN
 Route::post('addNewMessage', [ContactController::class, 'store'])->name('addNewMessage');
 Route::post('addNewMessageProf', [EnseignantController::class, 'store'])->name('addNewMessageProf');
 
-Route::get('/dashboard', function () {
-    return view('admin.pages.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [EnseignantController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,6 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin_messages', [ContactController::class, 'index'])->name('admin_messages');
     Route::get('/admin_activites', [ActiviteController::class, 'index'])->name('admin_activites');
     Route::get('/admin_neswsletter', [NewsletterController::class, 'index'])->name('admin_neswsletter');
+
+    Route::get('editProf/{id}', [EnseignantController::class, 'show_admin'])->name('editProf');
+    Route::get('viewMsg/{id}', [EnseignantController::class, 'show_msg'])->name('viewMsg');
+
+    Route::post('updateProf', [EnseignantController::class, 'update'])->name('updateProf');
+
+
+    Route::post('/addProf', [EnseignantController::class, 'storeProf'])->name('addProf');
 });
 
 require __DIR__ . '/auth.php';

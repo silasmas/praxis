@@ -11,10 +11,14 @@
 <script src="{{ asset('assets/admin/vendor/easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/chart.js/Chart.min.js') }}"></script> <!-- END PLUGINS JS -->
 <!-- BEGIN THEME JS -->
-<script src="{{ asset('assets/admin/javascript/theme.min.js') }}"></script> <!-- END THEME JS -->
+{{-- <script src="{{ asset('assets/admin/javascript/theme.min.js') }}"></script> <!-- END THEME JS --> --}}
 <script  src="{{ asset('assets/admin/custom/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('assets/admin/vendor/summernote/summernote-bs4.min.js') }} "></script>
+<script src="{{ asset('assets/admin/vendor/highlightjs/highlight.pack.min.js') }}"></script>
+<script src="{{ asset('assets/admin/javascript/pages/summernote-demo.js') }} "></script>
+{{-- <script src="{{ asset('assets/admin/javascript/pages/ace-demo.js') }} "></script> --}}
 <!-- BEGIN PAGE LEVEL JS -->
-<script src="{{ asset('assets/admin/javascript/pages/dashboard-demo.js') }}"></script> <!-- END PAGE LEVEL JS -->
+{{-- <script src="{{ asset('assets/admin/javascript/pages/dashboard-demo.js') }}"></script> <!-- END PAGE LEVEL JS --> --}}
 <script>
     var skin = localStorage.getItem('skin') || 'default';
     var isCompact = JSON.parse(localStorage.getItem('hasCompactMenu'));

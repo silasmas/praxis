@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/flatpickr/flatpickr.min.css') }}"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/summernote/summernote-bs4.min.css') }}">
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="{{ asset('assets/admin/stylesheets/theme.min.css') }}" data-skin="default">
     <link rel="stylesheet" href="{{ asset('assets/admin/stylesheets/theme-dark.min.css') }}" data-skin="dark">
@@ -50,7 +51,16 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/custom/sweetalert2/dist/sweetalert2.min.css') }}">
     @yield("style")
 
-
+    <script>
+        var skin = localStorage.getItem('skin') || 'default';
+        var isCompact = JSON.parse(localStorage.getItem('hasCompactMenu'));
+        var disabledSkinStylesheet = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+        // Disable unused skin immediately
+        disabledSkinStylesheet.setAttribute('rel', '');
+        disabledSkinStylesheet.setAttribute('disabled', true);
+        // add flag class to html immediately
+        if (isCompact == true) document.querySelector('html').classList.add('preparing-compact-menu');
+      </script>
     <!-- END THEME STYLES -->
   </head>
   <body>
