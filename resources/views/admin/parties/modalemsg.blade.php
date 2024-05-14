@@ -6,14 +6,16 @@
         <div id="modalContentLayer1" class="modal-content">
             <!-- .modal-header -->
             <div class="modal-header">
-                <h5 id="modalBoardConfigTitle" class="modal-title">
+                <h5 id="modalBoardConfigTitleMsg" class="modal-title">
                     Formulaire pour enregistrer d'un professeur
-                </h5>
+                </h5><br>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">×</span></button>
-            </div><!-- /.modal-header -->
-            <!-- .modal-body -->
-            <div class="modal-body" id="accordion">
+                    </div><!-- /.modal-header -->
+                    <!-- .modal-body -->
+                    <div class="modal-body" id="accordion">
+                    <h3 id="txtnbr"></h3>
+                    <hr>
 
             </div><!-- /.modal-body -->
         </div><!-- .modal-content -->

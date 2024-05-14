@@ -101,7 +101,7 @@ class EnseignantController extends Controller
         $prof = enseignant::with("message")->find($id);
         // dd($prof->message);
         if ($prof) {
-            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi",'data' => $prof->message]);
+            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi",'data' => $prof]);
         } else {
             return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
 

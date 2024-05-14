@@ -3,15 +3,14 @@
 
 @section("content")
 
-<!-- BANNER
-        ================================================== -->
+<!-- BANNER -->
         <section class="p-0 full-screen top-position1">
             <div class="slider-fade3 owl-carousel owl-theme w-100 min-vh-100">
                 <div class="item bg-img cover-background left-overlay-dark" data-overlay-dark="85" data-background="{{ asset('assets/img/banner/banner-10.jpg') }}">
                     <div class="container d-flex flex-column">
                         <div class="row align-items-center min-vh-100 pt-6 pt-md-0">
                             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mb-1-9 mb-lg-0 py-5">
-                                <div class="title-style3 mb-3">
+                                <div class="title-style3 mb-3 mt-8">
                                     <span>@lang('info.titre.slogan')</span>
                                 </div>
                                 <h1 class="text-white display-21 display-sm-19 display-md-17 display-lg-8 mb-4">Une nouvelle génération des leaders christocentriques</h1>

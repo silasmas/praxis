@@ -8,7 +8,7 @@
     /* ----------------------------------
 
     JS Active Code Index
-            
+
         01. Preloader
         02. Sticky Header
         03. Scroll To Top
@@ -28,8 +28,8 @@
         17. Countdown
         18. Current Year
         19. Isotop
-        
-    ---------------------------------- */    
+
+    ---------------------------------- */
 
 (function($) {
 
@@ -56,15 +56,15 @@
             var logoDark = $(".navbar-brand.dark img");
             if (scroll <= 50) {
                 $("header").removeClass("scrollHeader").addClass("fixedHeader");
-                logochange.attr('src', 'img/logos/logo-inner.png');
-                logodefault.attr('src', 'img/logos/logo.png');
-                logoDark.attr('src', 'img/logos/logo.png');
-            } 
+                logochange.attr('src', '../assets/img/logos/logo-inner.png');
+                logodefault.attr('src', '../assets/img/logos/logo.png');
+                logoDark.attr('src', '../assets/img/logos/logo.png');
+            }
             else {
                 $("header").removeClass("fixedHeader").addClass("scrollHeader");
-                logochange.attr('src', 'img/logos/logo.png');
-                logodefault.attr('src', 'img/logos/logo.png');
-                logoDark.attr('src', 'img/logos/logo.png');
+                logochange.attr('src', '../assets/img/logos/logo.png');
+                logodefault.attr('src', '../assets/img/logos/logo.png');
+                logoDark.attr('src', '../assets/img/logos/logo.png');
             }
         });
 
@@ -91,7 +91,7 @@
         /*------------------------------------
             04. Wow animation - on scroll
         --------------------------------------*/
-        
+
         var wow = new WOW({
             boxClass: 'wow', // default
             animateClass: 'animated', // default
@@ -127,7 +127,7 @@
                 $(this).css("background-image", "url(" + $(this).data("background") + ")");
             }
         });
-        
+
         /*------------------------------------
             06. Video
         --------------------------------------*/
@@ -168,7 +168,7 @@
         $( ".second, .first, .four" ).fadeOut();
         $( ".third" ).fadeIn(1000);
         });
-                
+
         /*------------------------------------
             08. Resize function
         --------------------------------------*/
@@ -203,7 +203,7 @@
 
         /*------------------------------------
             11. FullScreenHeight and screenHeight with resize function
-        --------------------------------------*/        
+        --------------------------------------*/
 
         function SetResizeContent() {
             fullScreenHeight();
@@ -239,7 +239,7 @@
             });
             $('.vision-changebg').delay(50).animate({ opacity: 0.9 }, 50);
         });
-        
+
 
     // === when document ready === //
     $(document).ready(function() {
@@ -317,7 +317,7 @@
                     items: 1
                 }
             }
-        });  
+        });
 
         // testmonial-carousel
         $('.testimonial-style4').owlCarousel({
@@ -342,7 +342,7 @@
                     items: 3
                 }
             }
-        });     
+        });
 
         // testmonial-carousel
         $('.portfolio-slider').owlCarousel({
@@ -370,7 +370,7 @@
                     items: 3
                 }
             }
-        }); 
+        });
 
         // portfolio-carousel
         $('.portfolio-carousel').owlCarousel({
@@ -399,7 +399,7 @@
                     items: 5
                 }
             }
-        }); 
+        });
 
         // Testmonial6
         $('.portfolio-block').owlCarousel({
@@ -466,7 +466,7 @@
                 dots: false
                 }
             }
-            
+
         });
 
         // Sliderfade
@@ -508,7 +508,7 @@
                 nav: true,
                 dots: false
                 }
-            }            
+            }
         });
 
         // Clients carousel
@@ -658,7 +658,7 @@
                 }
             }
         });
-        
+
         // Default owlCarousel
         $('.owl-carousel').owlCarousel({
             items: 1,
@@ -757,7 +757,7 @@
         --------------------------------------*/
 
         $('.current-year').text(new Date().getFullYear());
-        
+
     });
 
     // === when window loading === //
@@ -787,7 +787,7 @@
 
         // stellar
         $window.stellar();
-        
+
     });
 
 })(jQuery);

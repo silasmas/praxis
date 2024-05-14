@@ -13,7 +13,8 @@ class NewsletterController extends Controller
      */
     public function index()
     {
-        //
+        $newsletter = newsletter::get();
+        return view("admin.pages.dashboard", compact('newsletter'));
     }
 
     /**

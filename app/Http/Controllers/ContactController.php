@@ -13,7 +13,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $messages = contact::where("enseignant_id", null)->get();
+        // dd($messages);
+        return view("admin.pages.dashboard", compact('messages'));
     }
 
     /**

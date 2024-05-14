@@ -17,12 +17,7 @@
                     </li><!-- /.menu-item -->
 
                     <!-- .menu-item -->
-                    <li class="menu-item {{ Route::current()->getName() == 'media' ? 'has-active' : ''}}">
-                        <a href="" class="menu-link">
-                            <span class="menu-icon fas fa-film"></span>
-                            <span class="menu-text">Medias</span>
-                        </a>
-                    </li>
+
                     {{-- <li class="menu-item {{ Route::current()->getName() == 'serie' ? 'has-active' : ''}}">
                         <a href="{{ route('categories') }}" class="menu-link">
                             <span class="menu-icon fas fa-rocket"></span>
@@ -61,11 +56,11 @@
                     </li> --}}
                     <!-- /.menu-item -->
                     <!-- .menu-header -->
-                    <li class="menu-header">Partenaire </li><!-- /.menu-header -->
+                    {{-- <li class="menu-header">Partenaire </li><!-- /.menu-header -->
                     <a href="#" class="menu-link">
                         <span class="menu-icon fas fa-rocket"></span>
                         <span class="menu-text">Landing Page</span>
-                    </a>
+                    </a> --}}
 
                 </ul><!-- /.menu -->
             </nav><!-- /.stacked-menu -->

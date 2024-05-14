@@ -3,8 +3,12 @@
 @section("style")
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/photoswipe/photoswipe.css') }} ">
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/photoswipe/default-skin/default-skin.css') }} ">
-<link rel="stylesheet" href="{{ asset('assets/admin/vendor/plyr/plyr.css') }}" @endsection @section("content") <main
-    class="app-main">
+<link rel="stylesheet" href="{{ asset('assets/admin/vendor/plyr/plyr.css') }}" >
+<link rel="stylesheet" href="{{ asset('assets/admin/stylesheets/dataTables/datatables.min.css') }}">
+
+@endsection
+@section("content")
+ <main class="app-main">
 <div class="wrapper">
     <main class="app-main">
         <!-- .wrapper -->
@@ -43,7 +47,7 @@
                                 <a class="nav-link {{ Route::current()->getName()=="admin_activites"?"active":"" }}" href="{{ route('admin_activites') }}">Activités</a>
                                 <a class="nav-link {{ Route::current()->getName()=="admin_messages"?"active":"" }}" href="{{ route('admin_messages') }}">Messages</a>
                                 <a class="nav-link {{ Route::current()->getName()=="admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}" href="{{ route('admin_profs') }}">Enseignants</a>
-                                <a class="nav-link {{ Route::current()->getName()=="admin_newsletters"?"active":"" }}" href="{{ route('addNewsletter') }}">News letter</a>
+                                <a class="nav-link {{ Route::current()->getName()=="admin_neswsletter"?"active":"" }}" href="{{ route('admin_neswsletter') }}">News letter</a>
                             </div><!-- /.nav -->
                         </div><!-- /.nav-scroller -->
                     </header><!-- /.page-title-bar -->
@@ -89,8 +93,72 @@
 <script src="{{ asset('assets/admin/vendor/plyr/plyr.min.js') }}"></script>
 <script src="{{ asset('assets/admin/vendor/plyr/plyr.min.js') }}"></script>
 <script src="{{ asset('assets/admin/javascript/pages/photoswipe-demo.js') }} "></script>
-
+<script src="{{asset('assets/admin/javascript/dataTables/datatables.min.js')}}"></script>
 <script>
+    $(document).ready(function () {
+        $('.dataTables-example').DataTable({
+            language: {
+                processing: "Traitement en cours...",
+                search: "Rechercher&nbsp;:",
+                lengthMenu: "Afficher _MENU_ &eacute;l&eacute;ments",
+                info: "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                infoEmpty: "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                infoFiltered: "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                infoPostFix: "",
+                loadingRecords: "Chargement en cours...",
+                zeroRecords: "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                emptyTable: "Aucune donnée disponible dans le tableau",
+                paginate: {
+                    first: "Premier",
+                    pagingType: "full_numbers", // Afficher tous les boutons de pagination
+                    previous: "Pr&eacute;c&eacute;dent",
+                    next: "Suivant",
+                    last: "Dernier"
+                },
+                aria: {
+                    sortAscending: ": activer pour trier la colonne par ordre croissant",
+                    sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                }
+            },
+            pageLength: 25,
+            responsive: true,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [{
+                    extend: 'copy'
+                },
+                {
+                    extend: 'csv'
+                },
+                {
+                    extend: 'excel',
+                    title: 'NewsLetter'
+                },
+                {
+                    extend: 'pdf',
+                    title: 'NewsLetter'
+                },
+
+                {
+                    extend: 'print',
+                    customize: function (win) {
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                    }
+                }
+            ],"columnDefs": [
+            { "width": "700px", "targets": 2 }, // Définir une largeur de 100 pixels pour la première colonne
+            { "width": "200px", "targets": 3 }, // Définir une largeur de 100 pixels pour la première colonne
+            { "width": "200px", "targets": 1 }, // Définir une largeur de 150 pixels pour la deuxième colonne
+            // Ajouter d'autres colonnes avec leurs largeurs respectives
+        ]
+        });
+    });
+
+
             $("#formProf").on("submit", function (e) {
                     e.preventDefault();
                     var formElement = document.getElementById('formProf');
@@ -211,6 +279,7 @@
                         title: 'Merci de patienter...',
                         icon: 'info'
                     })
+                    // supprimerPopup("modalBoardConfig2");
 
                     $.ajax({
                         url:root+'/'+ id,
@@ -222,65 +291,43 @@
                                     icon: 'error'
                                 })
                             } else {
+
                                 // Remplir les champs du formulaire avec les données reçues
                                 let dataContainer = document.getElementById('accordion');
-                                let responseData = data.data;
-                // Créer un accordéon pour chaque donnée récupérée
-                responseData.forEach(function(datas, index) {
-                let card = document.createElement('div');
-                card.className = 'card card-expansion-item';
-                if (index === 0) {
-                    card.classList.add('expanded');
-                }
-                let cardHeader = document.createElement('div');
-                cardHeader.className = 'card-header border-0';
-                cardHeader.id = 'heading' + (index + 1);
-
-                let button = document.createElement('button');
-                button.className = 'btn btn-reset';
-                button.setAttribute('data-toggle', 'collapse');
-                button.setAttribute('data-target', '#collapse' + (index + 1));
-                button.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
-                button.setAttribute('aria-controls', 'collapse' + (index + 1));
-                button.innerHTML = '<span class="collapse-indicator mr-2"><i class="fa fa-fw fa-caret-right"></i></span> <span>' + data.title + '</span>';
-
-                cardHeader.appendChild(button);
-
-                    let collapseDiv = document.createElement('div');
-                    collapseDiv.id = 'collapse' + (index + 1);
-                    collapseDiv.className = 'collapse';
-                    if (index === 0) {
-                        collapseDiv.classList.add('show');
-                    }
-                    collapseDiv.setAttribute('aria-labelledby', 'heading' + (index + 1));
-                    collapseDiv.setAttribute('data-parent', '#accordion');
-
-                    let cardBody = document.createElement('div');
-                    cardBody.className = 'card-body pt-0';
-                    cardBody.textContent = data.message;
-
-                    collapseDiv.appendChild(cardBody);
-
-                    card.appendChild(cardHeader);
-                    card.appendChild(collapseDiv);
-
-                    accordion.appendChild(card);
-
-                    button.addEventListener('click', function() {
-                        collapseDiv.classList.toggle('show');
-                        button.setAttribute('aria-expanded', collapseDiv.classList.contains('show') ? 'true' : 'false');
-                    });
-                    });
-                            // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#btnrond2');
-                                // Simuler un clic sur le bouton pour ouvrir le modal
-                            button.click();
-                            $('#modalBoardConfigTitle').text("Formulaire pour modifier les info d'un professeur");
-                                Swal.fire({
-                                    title: data.msg,
+                                let titreModale = document.getElementById('modalBoardConfigTitleMsg');
+                                let titreNbr = document.getElementById('txtnbr');
+                                let responseData = data.data.message;
+                                console.log(responseData.length)
+                                if (responseData.length==0) {
+                                    Swal.fire({
+                                    title: "Aucun message trouvé",
                                     icon: 'success'
-                                })
-                                // actualiser();
+                                    })
+                                } else {
+                                    // Créer un accordéon pour chaque donnée récupérée
+                                responseData.forEach(function(datas,index) {
+                                console.log(datas)
+                                let card = document.createElement('div');
+                                var title = datas.title;
+                                var content = datas.content;
+
+                                var div = document.createElement('div');
+                                div.innerHTML = "("+ ++index+')<br/><h2>NOM : ' + datas.nom + '</h2><p><strong> Email : </strong>' + datas.email + '</p><p> <strong>Phone </strong>: ' + datas.phone + '</p><p> <strong>Objet : </strong>' + datas.obje + '</p><p> <strong>Message </strong>: ' + datas.message + '</p><hr>';
+                                titreModale.textContent="Liste des messages envoyé à "+data.data.prenom+" "+data.data.nom
+                                titreNbr.textContent=responseData.length+ " Message(s) trouvé "
+                                dataContainer.appendChild(div);
+                                });
+
+                                // Sélectionner le bouton qui déclenche l'ouverture du modal
+                                var button = $('#btnrond2');
+                                    // Simuler un clic sur le bouton pour ouvrir le modal
+                                button.click();
+                                $('#modalBoardConfigTitle').text("Messages trouvé");
+                                    Swal.fire({
+                                        title: data.msg,
+                                        icon: 'success'
+                                    })
+                                }
                             }
                         },
                     });
@@ -288,6 +335,12 @@
                 function actualiser() {
                     location.reload();
                 }
+                function supprimerPopup(id) {
+                var popup = document.getElementById(id); // Identifier l'élément du pop-up
+                if (popup) {
+                    popup.remove(); // Supprimer l'élément du DOM
+                }
+}
 
 
 
