@@ -81,9 +81,9 @@
                     <div class="col-lg-6 mt-lg-0 wow fadeIn" data-wow-delay="200ms">
                         <div class="ps-lg-3 ps-xl-5">
                             <span class="d-block text-secondary display-23 display-md-21 display-lg-20 fw-bold title-font wow text-animation" data-in-effect="fadeInRight">Qu'est-ce que nous offrons ? </span>
-                            <h2 class="h1 mb-1-9 fw-bold">
+                            <h4 class="h1 mb-1-9 fw-bold">
                                 La formation théologique et biblique qu'il vous faut !
-                            </h2>
+                            </h4>
                             <p class="mb-1-9">
                                 À la recherche d'une opportunité extraordinaire pour vous lancer dans des études théologiques de qualité, qui vous doteront d'une solide compréhension des Écritures et d'une vision profondément centrée sur Jésus Christ et son Évangile ?
 
