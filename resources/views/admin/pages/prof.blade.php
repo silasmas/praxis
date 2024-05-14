@@ -1,13 +1,15 @@
 <div class="page-section">
     <!-- .section-block -->
     <div class="section-block">
-        <button type="button" id="btnrond" class="btn btn-success btn-floated" data-toggle="modal"
-        data-target="#modalBoardConfig2">
         <button type="button" hidden id="btnrond2" class="btn btn-success btn-floated" data-toggle="modal"
         data-target="#modalBoardConfig2">
-        <span id="spanbtnrond" class="fa fa-plus">
-        </span>
-</button>
+        <span id="spanbtnrond2" class="fa fa-plus"></span>
+        </button>
+        <button type="button" id="btnrond" class="btn btn-success btn-floated" data-toggle="modal"
+        data-target="#modalBoardConfig">
+        <span id="spanbtnrond" class="fa fa-plus"></span>
+    </button>
+
         @forelse ($profs as $p)
         <div class="card mb-2">
             <!-- .card-body -->

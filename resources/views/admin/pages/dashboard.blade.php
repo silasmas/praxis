@@ -193,7 +193,7 @@
                             $("#formProf").off("submit");
                             $('#formProf').attr('id', 'formProfEdite');
                             // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#btnrond2');
+                            var button = $('#btnrond');
                                 // Simuler un clic sur le bouton pour ouvrir le modal
                             button.click();
                             $('#modalBoardConfigTitle').text("Formulaire pour modifier les info d'un professeur");
@@ -272,7 +272,7 @@
                     });
                     });
                             // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#btnrond');
+                            var button = $('#btnrond2');
                                 // Simuler un clic sur le bouton pour ouvrir le modal
                             button.click();
                             $('#modalBoardConfigTitle').text("Formulaire pour modifier les info d'un professeur");
