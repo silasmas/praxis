@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-lg-6 mb-1-9 mb-lg-0 position-relative wow fadeIn" data-wow-delay="200ms">
                                     <div>
-                                        <img src="{{ asset('assets/img/'.$prof->profil) }}" class="border-radius-10 mt-n5" alt="...">
+                                        <img src="{{ asset('storage/'.$prof->profil) }}" class="border-radius-10 mt-n5" alt="...">
                                         {{-- <img src="{{ asset('assets/img/shape/03.png') }}" class="team-single-img" alt="..."> --}}
                                     </div>
                                 </div>
