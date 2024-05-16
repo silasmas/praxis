@@ -52,12 +52,11 @@
                                             </div>
                                             <h2 class="h1 mb-1-9 fw-bold">Praxis</h2>
                                             <p class="mb-1-9">
-                                                À la recherche d'une opportunité extraordinaire pour vous lancer dans des études théologiques de qualité, qui vous doteront d'une solide compréhension des Écritures et d'une vision profondément centrée sur Jésus Christ et son Évangile ?
+                                                L'école biblique et théologique Praxis fait partie des cinq branches de Gospel Influence Ministries qui vise à doter les dirigeants d'église d'une solide formation théologique de persuasion réformée. Cela leur permettra de faire des disciples et de réfuter les hérésies rampantes et les modes de pensée syncrétiques qui ont tourmenté l'Église en Afrique. Cette école a la particularité d'adapter son programme d'études aux défis contextuels des pasteurs en Afrique, tels que le coût de la fréquentation d'une école théologique, les contraintes d'emploi du temps et la difficulté de concilier les exigences de l'école et des ministères. Nous n'attendons plus que les pasteurs viennent à l'école. Nous amenons l'école aux pasteurs.
 
-                                                Ne cherchez plus loin ! Praxis est l'école théologique qu'il vous faut.
-
-                                                Nous vous offrons une formation en théologie biblique et chrétienne qui vous permettra non seulement d'approfondir vos connaissances, mais aussi de devenir un serviteur efficace et fidèle, prêt à impacter votre communauté avec l'Évangile de la suprématie de la gloire de Dieu.
-                                                Rejoignez-nous dès maintenant à Praxis et ouvrez-vous à une expérience exceptionnelle !
+                                                <button type="button" class="butn-style1" data-bs-toggle="modal" data-bs-target="#scrollable2">
+                                                    Lire la suite
+                                                    </button>
                                             </p>
                                             {{-- <div class="mb-1-9">
                                                 <span>Call us 24/7. We can answer for <strong
@@ -217,5 +216,5 @@
 @include("parties.team")
 
 @include("parties.temoignage")
-@include("parties.modale")
+@include("parties.modaleabout")
 @endsection

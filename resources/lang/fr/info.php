@@ -18,6 +18,19 @@ return [
         Nous vous invitons à venir à Praxis car mieux, on connaît Christ, mieux on le sert et mieux encore on est satisfait en lui.
 
         Praxis hier, Praxis aujourd’hui ! Praxis pour toujours ! Blessed.',
+        't2' => "L'école biblique et théologique Praxis fait partie des cinq branches de Gospel Influence Ministries qui vise à doter les dirigeants d'église d'une solide formation théologique de persuasion réformée. Cela leur permettra de faire des disciples et de réfuter les hérésies rampantes et les modes de pensée syncrétiques qui ont tourmenté l'Église en Afrique. Cette école a la particularité d'adapter son programme d'études aux défis contextuels des pasteurs en Afrique, tels que le coût de la fréquentation d'une école théologique, les contraintes d'emploi du temps et la difficulté de concilier les exigences de l'école et des ministères. Nous n'attendons plus que les pasteurs viennent à l'école. Nous amenons l'école aux pasteurs.
+
+        Praxis offre un système d'enseignement modulaire (7 modules) dans un format Licence, Master et Doctorat.
+        
+        L'objectif principal de Praxis est de rendre la théologie accessible à tous les niveaux de croyants. Que vous soyez un débutant cherchant à approfondir votre compréhension de la Bible ou un leader d'église expérimenté désireux d'approfondir vos connaissances théologiques, Praxis offre une variété de cours adaptés à différents niveaux de compétence.
+        L'école propose des horaires flexibles pour s'adapter aux besoins des étudiants. Les cours sont disponibles en deux créneaux horaires : le matin de 8h00 à 12h00 et le soir de 17h00 à 19h30. Cela permet aux étudiants de choisir la période qui convient le mieux à leur emploi du temps et à leurs engagements personnels.
+
+        Praxis offre également une flexibilité en termes de modes d'enseignement. Les cours sont dispensés en présentiel, ce qui permet aux étudiants d'interagir directement avec les enseignants et les autres étudiants. De plus, les cours sont également disponibles en ligne, soit en temps réel via la plateforme de vidéoconférence Zoom, soit sous forme de cours préenregistrés. Cette approche hybride permet aux étudiants d'accéder aux cours à distance, ce qui est particulièrement avantageux pour ceux qui ne peuvent pas se déplacer physiquement à l'école.
+
+        Dans l'ensemble, Praxis est une école biblique et théologique dynamique qui cherche à offrir une éducation théologique de qualité tout en s'adaptant aux besoins et aux contraintes de ses étudiants. Que ce soit en personne ou en ligne, Praxis s'efforce de fournir un environnement d'apprentissage enrichissant où les étudiants peuvent développer leur compréhension de la Bible et approfondir leur foi.
+
+        Satisfait en Christ,
+        Bienvenue à Praxis !",
     ],
 
 ];
