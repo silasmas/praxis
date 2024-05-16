@@ -3,86 +3,98 @@
 @section("style")
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/photoswipe/photoswipe.css') }} ">
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/photoswipe/default-skin/default-skin.css') }} ">
-<link rel="stylesheet" href="{{ asset('assets/admin/vendor/plyr/plyr.css') }}" >
+<link rel="stylesheet" href="{{ asset('assets/admin/vendor/plyr/plyr.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/admin/stylesheets/dataTables/datatables.min.css') }}">
 
 @endsection
 @section("content")
- <main class="app-main">
-<div class="wrapper">
-    <main class="app-main">
-        <!-- .wrapper -->
-        <div class="wrapper">
-            <!-- .page -->
-            <div class="page py-0">
-            {{-- <div class="page has-sidebar has-sidebar-expand-xl"> --}}
-                <!-- .page-inner -->
-                <div class="page-inner">
-                    <!-- .page-title-bar -->
-                    <header class="page-title-bar">
-                        <!-- grid row -->
-                        <div class="row text-center text-sm-left">
-                            <!-- grid column -->
-                            <div class="col-sm-auto col-12 mb-2">
-                                <!-- .has-badge -->
-                                <div class="has-badge has-badge-bottom">
-                                    <a href="#" class="user-avatar user-avatar-xl"><img
-                                            src="{{ asset('assets/admin/images/default.jpg') }}" alt=""></a> <span
-                                        class="tile tile-circle tile-xs" data-toggle="tooltip" title="Public"><i
-                                            class="fas fa-globe"></i></span>
-                                </div><!-- /.has-badge -->
-                            </div><!-- /grid column -->
-                            <!-- grid column -->
-                            <div class="col">
-                                <h1 class="page-title"> Panel administration</h1>
-                                <p class="text-muted">Dans cette page vous avez la possibilité de géré les informations
-                                    du site </p>
-                            </div><!-- /grid column -->
-                        </div><!-- /grid row -->
-                        <!-- .nav-scroller -->
-                        <div class="nav-scroller border-bottom">
-                            <!-- .nav -->
-                            <div class="nav nav-tabs">
-                                <a class="nav-link {{ Route::current()->getName()=="admin_articles"?"active":"" }}" href="{{ route('admin_articles') }}">Articles</a>
-                                <a class="nav-link {{ Route::current()->getName()=="admin_activites"?"active":"" }}" href="{{ route('admin_activites') }}">Activités</a>
-                                <a class="nav-link {{ Route::current()->getName()=="admin_messages"?"active":"" }}" href="{{ route('admin_messages') }}">Messages</a>
-                                <a class="nav-link {{ Route::current()->getName()=="admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}" href="{{ route('admin_profs') }}">Enseignants</a>
-                                <a class="nav-link {{ Route::current()->getName()=="admin_neswsletter"?"active":"" }}" href="{{ route('admin_neswsletter') }}">News letter</a>
-                            </div><!-- /.nav -->
-                        </div><!-- /.nav-scroller -->
-                    </header><!-- /.page-title-bar -->
-                    <!-- .page-section -->
-                    @switch(Route::current()->getName())
-                        @case("dashboard")
-                        @include("admin.pages.prof")
-                            @break
-                        @case("admin_articles")
-                        @include("admin.pages.articles")
-                            @break
-                        @case("admin_messages")
-                        @include("admin.pages.message")
-                            @break
-                        @case("admin_activites")
-                        @include("admin.pages.activites")
-                            @break
-                        @case("admin_prof")
+<main class="app-main">
+    <div class="wrapper">
+        <main class="app-main">
+            <!-- .wrapper -->
+            <div class="wrapper">
+                <!-- .page -->
+                <div class="page py-0">
+                    {{-- <div class="page has-sidebar has-sidebar-expand-xl"> --}}
+                        <!-- .page-inner -->
+                        <div class="page-inner">
+                            <!-- .page-title-bar -->
+                            <header class="page-title-bar">
+                                <!-- grid row -->
+                                <div class="row text-center text-sm-left">
+                                    <!-- grid column -->
+                                    <div class="col-sm-auto col-12 mb-2">
+                                        <!-- .has-badge -->
+                                        <div class="has-badge has-badge-bottom">
+                                            <a href="#" class="user-avatar user-avatar-xl"><img
+                                                    src="{{ asset('assets/admin/images/default.jpg') }}" alt=""></a>
+                                            <span class="tile tile-circle tile-xs" data-toggle="tooltip"
+                                                title="Public"><i class="fas fa-globe"></i></span>
+                                        </div><!-- /.has-badge -->
+                                    </div><!-- /grid column -->
+                                    <!-- grid column -->
+                                    <div class="col">
+                                        <h1 class="page-title"> Panel administration</h1>
+                                        <p class="text-muted">Dans cette page vous avez la possibilité de géré les
+                                            informations
+                                            du site </p>
+                                    </div><!-- /grid column -->
+                                </div><!-- /grid row -->
+                                <!-- .nav-scroller -->
+                                <div class="nav-scroller border-bottom">
+                                    <!-- .nav -->
+                                    <div class="nav nav-tabs">
+                                        <a class="nav-link {{ Route::current()->getName()==" admin_articles"?"active":""
+                                            }}" href="{{ route('admin_articles') }}">Articles</a>
+                                        <a class="nav-link {{ Route::current()->getName()=="
+                                            admin_activites"?"active":"" }}"
+                                            href="{{ route('admin_activites') }}">Activités</a>
+                                        <a class="nav-link {{ Route::current()->getName()==" admin_messages"?"active":""
+                                            }}" href="{{ route('admin_messages') }}">Messages</a>
+                                        <a class="nav-link {{ Route::current()->getName()=="
+                                            admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}"
+                                            href="{{ route('admin_profs') }}">Enseignants</a>
+                                        <a class="nav-link {{ Route::current()->getName()=="
+                                            admin_neswsletter"?"active":"" }}"
+                                            href="{{ route('admin_neswsletter') }}">News letter</a>
+                                    </div><!-- /.nav -->
+                                </div><!-- /.nav-scroller -->
+                            </header><!-- /.page-title-bar -->
+                            <!-- .page-section -->
+                            @switch(Route::current()->getName())
+                            @case("dashboard")
                             @include("admin.pages.prof")
                             @break
-                        @case("admin_neswsletter")
-                        @include("admin.pages.newsletter")
+                            @case("admin_articles")
+                            @include("admin.pages.articles")
+                            @break
+                            @case("admin_messages")
+                            @include("admin.pages.message")
+                            @break
+                            @case("admin_activites")
+                            @include("admin.pages.activites")
+                            @include("admin.parties.modaleCat")
+                            @include("admin.parties.modaleGal")
+                            @break
+                            @case("admin_profs")
+                            @include("admin.pages.prof")
+                            @include("admin.parties.modale")
+                            @include("admin.parties.modalemsg")
+                            @break
+                            @case("admin_neswsletter")
+                            @include("admin.pages.newsletter")
                             @break
 
-                        @default
+                            @default
 
-                    @endswitch
-                </div><!-- /.page-inner -->
-            </div><!-- /.page -->
-        </div><!-- /.wrapper -->
+                            @endswitch
+                        </div><!-- /.page-inner -->
+                    </div><!-- /.page -->
+                </div><!-- /.wrapper -->
 
-        @include("admin.parties.modale")
-        @include("admin.parties.modalemsg")
-    </main><!-- /.app-main -->
-</div>
+
+        </main><!-- /.app-main -->
+    </div>
 </main>
 @endsection
 
@@ -159,76 +171,193 @@
     });
 
 
-            $("#formProf").on("submit", function (e) {
-                    e.preventDefault();
-                    var formElement = document.getElementById('formProf');
-                    add(formElement, 'POST', 'addProf',"#formProf")
-            });
-            $(document).on("submit","#formProfEdite", function (e) {
-                    e.preventDefault();
-                            // Sélectionner le formulaire par son ID
-                var formElement = document.getElementById('formProfEdite');
-
-                // Créer un objet FormData à partir de l'élément de formulaire
-                var formData = new FormData(formElement);
-
-                // Accéder au champ de type file
-                var fileInput = formElement.querySelector('input[type="file"]');
-
-            // Vérifier si un fichier a été sélectionné
-                        if (fileInput.files.length > 0) {
-                            var file = fileInput.files[0];
-                            console.log("Nom du fichier : " + file.name);
-                            console.log("Taille du fichier : " + file.size);
-                            console.log("Type MIME du fichier : " + file.type);
-
-                            // Ajouter le champ de type file à l'objet FormData
-                            formData.append('file', file);
-                            console.log("for : " + formData);
-                        }
-                add(formData, 'post', 'updateProf','#formProfEdite')
-            });
-
-            function add(form, mothode, url,idf) {
-                var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                var f = form;
-                var u = url;
-                var idform = idf;
-                Swal.fire({
-                    title: 'Merci de patienter...',
-                    icon: 'info'
-                })
-                // console.log(form)
-                $.ajax({
-                    url: u,
-                    method: mothode,
-                    data: form,
-                    processData: false,
-                    contentType: false,
-                    headers: {
-                        'X-CSRF-TOKEN': csrfToken
-                    },
-                    success: function (data) {
-
-                        if (!data.reponse) {
-                            Swal.fire({
-                                title: data.msg,
-                                icon: 'error'
-                            })
-                        } else {
-                            Swal.fire({
-                                title: data.msg,
-                                icon: 'success'
-                            })
-
-                            $(idform)[0].reset();
-                            actualiser();
-                        }
-
-                    },
+                $("#formCategorie").on("submit", function (e) {
+                        e.preventDefault();
+                        var formElement = document.getElementById('formCategorie');
+                        addAll(formElement, 'POST', 'addCategorie',"#formCategorie")
                 });
-             }
-             function editeAll(id,root) {
+
+                $("#formProf").on("submit", function (e) {
+                        e.preventDefault();
+                        var formElement = document.getElementById('formProf');
+                        add(formElement, 'POST', 'addProf',"#formProf")
+                });
+                $(document).on("submit","#formGalerie", function (e) {
+                        e.preventDefault();
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formGalerie');
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+
+                // Vérifier si un fichier a été sélectionné
+                            if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+                    add(formData, 'post', 'addGalerie','#formGalerie')
+                });
+
+                $(document).on("submit","#formProfEdite", function (e) {
+                        e.preventDefault();
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formProfEdite');
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+
+                // Vérifier si un fichier a été sélectionné
+                            if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+                    add(formData, 'post', 'updateProf','#formProfEdite')
+                });
+
+                $(document).on("submit","#formCategorieEdite", function (e) {
+                        e.preventDefault();
+
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formCategorieEdite');
+                    addAll(formElement, 'post', 'updateCat','#formCategorieEdite')
+                });
+
+                function addAll(form, mothode, url,idf) {
+                    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    var f = form;
+                    var u = url;
+                    var idform = idf;
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+                        //  console.log($(form).serialize())
+                    $.ajax({
+                        url: u,
+                        method: mothode,
+                        data: $(f).serialize(),
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        success: function (data) {
+
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+
+                                $(idform)[0].reset();
+                                actualiser();
+                            }
+
+                        },
+                    });
+                }
+
+                function add(form, mothode, url,idf) {
+                    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    var f = form;
+                    var u = url;
+                    var idform = idf;
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+                        console.log(form)
+                    $.ajax({
+                        url: u,
+                        method: mothode,
+                        data: form,
+                        processData: false,
+                        contentType: false,
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        success: function (data) {
+
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+
+                                $(idform)[0].reset();
+                                actualiser();
+                            }
+
+                        },
+                    });
+                }
+
+                function editeCat(id,root) {
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+
+                    $.ajax({
+                        url:root+'/'+ id,
+                        method: "GET",
+                        success: function(data) {
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                // Remplir les champs du formulaire avec les données reçues
+                                console.log(data.data)
+                            $('#nom').val(data.data.nom);
+                            $('#description').val(data.data.description);
+                            $('#idCat').val(data.data.id);
+
+                            // Changer le texte du bouton
+                            $('#btnCategorieAdd').text('Modifier');
+                            $("#formCategorie").off("submit");
+                            $('#formCategorie').attr('id', 'formCategorieEdite');
+                            // Sélectionner le bouton qui déclenche l'ouverture du modal
+                            var button = $('#addCat');
+                                // Simuler un clic sur le bouton pour ouvrir le modal
+                            button.click();
+                            $('#modalCategorieTitle').text("Formulaire pour modifier une catégorie");
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+                                // actualiser();
+                            }
+                        },
+                    });
+                }
+
+                function editeAll(id,root) {
                     Swal.fire({
                         title: 'Merci de patienter...',
                         icon: 'info'
@@ -274,6 +403,8 @@
                         },
                     });
                 }
+
+
                 function viewMsg(id,root) {
                     Swal.fire({
                         title: 'Merci de patienter...',
@@ -312,7 +443,7 @@
                                 var content = datas.content;
 
                                 var div = document.createElement('div');
-                                div.innerHTML = "("+ ++index+')<br/><h2>NOM : ' + datas.nom + '</h2><p><strong> Email : </strong>' + datas.email + '</p><p> <strong>Phone </strong>: ' + datas.phone + '</p><p> <strong>Objet : </strong>' + datas.obje + '</p><p> <strong>Message </strong>: ' + datas.message + '</p><hr>';
+                                div.innerHTML = "("+ ++index+') Date : '+datas.created_at+'<br/><h2>NOM : ' + datas.nom + '</h2><p><strong> Email : </strong>' + datas.email + '</p><p> <strong>Phone </strong>: ' + datas.phone + '</p><p> <strong>Objet : </strong>' + datas.obje + '</p><p> <strong>Message </strong>: ' + datas.message + '</p><hr>';
                                 titreModale.textContent="Liste des messages envoyé à "+data.data.prenom+" "+data.data.nom
                                 titreNbr.textContent=responseData.length+ " Message(s) trouvé "
                                 dataContainer.appendChild(div);
@@ -335,12 +466,59 @@
                 function actualiser() {
                     location.reload();
                 }
-                function supprimerPopup(id) {
-                var popup = document.getElementById(id); // Identifier l'élément du pop-up
-                if (popup) {
-                    popup.remove(); // Supprimer l'élément du DOM
+                function getGal(img,idg,url) {
+                    let id=idg+"$"+img;
+                    deleted(id, url)
                 }
-}
+                function supprimerPopup(id) {
+                    var popup = document.getElementById(id); // Identifier l'élément du pop-up
+                    if (popup) {
+                        popup.remove(); // Supprimer l'élément du DOM
+                    }
+                }
+                function deleted(id, url) {
+                    Swal.fire({
+                        title: "Attention Suppression",
+                        text: "Êtes-vous sûr de vouloir supprimer cette information?",
+                        icon: 'warning',
+                        inputAttributes: {
+                            autocapitalize: "off"
+                        },
+                        showCancelButton: true,
+                        confirmButtonText: "OUI",
+                        cancelButtonText: "NON",
+                        showLoaderOnConfirm: true,
+                        preConfirm: async (login) => {
+                            // alert('alert')
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: 'Merci de patienter...',
+                                icon: 'info'
+                            })
+                            $.ajax({
+                                url: url + '/' + id,
+                                method: "GET",
+                                success: function (data) {
+                                    if (!data.reponse) {
+                                        Swal.fire({
+                                            title: data.msg,
+                                            icon: 'error'
+                                        })
+                                    } else {
+                                        Swal.fire({
+                                            title: data.msg,
+                                            icon: 'success'
+                                        })
+                                        actualiser();
+                                    }
+                                },
+                            });
+                        }
+                    });
+                }
 
 
 

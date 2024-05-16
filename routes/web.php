@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\NewsletterController;
@@ -47,11 +48,19 @@ Route::middleware('auth')->group(function () {
 
     Route::get('editProf/{id}', [EnseignantController::class, 'show_admin'])->name('editProf');
     Route::get('viewMsg/{id}', [EnseignantController::class, 'show_msg'])->name('viewMsg');
+    Route::get('editCat/{id}', [CategorieController::class, 'show'])->name('editCat');
 
     Route::post('updateProf', [EnseignantController::class, 'update'])->name('updateProf');
+    Route::post('updateCat', [CategorieController::class, 'update'])->name('updateCat');
 
 
     Route::post('/addProf', [EnseignantController::class, 'storeProf'])->name('addProf');
+    Route::post('/addCategorie', [CategorieController::class, 'store'])->name('addCategorie');
+    Route::post('/addGalerie', [ActiviteController::class, 'store'])->name('addGalerie');
+
+    Route::get('deleteCat/{id}', [CategorieController::class, 'destroy'])->name('deleteCat');
+    Route::get('deleteGalerie/{id}', [ActiviteController::class, 'destroy'])->name('deleteGalerie');
+
 });
 
 require __DIR__ . '/auth.php';

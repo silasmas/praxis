@@ -14,9 +14,15 @@
                                 <div class="team-image position-relative">
                                     <div class="team-icons">
                                         <span class="team-icon ti-close"></span>
+                                        @if ($p->x!=null)
                                         <a href="{{ $p->x }}" target="blank" class="team-icon fab fa-youtube"></a>
+                                        @endif
+                                        @if ($p->fb!=null)
                                         <a href="{{ $p->fb }}" target="blank" class="team-icon fab fa-facebook-f"></a>
+                                        @endif
+                                        @if ($p->insta!=null)
                                         <a href="{{ $p->insta }}" target="blank" class="team-icon fab fa-instagram"></a>
+                                        @endif
                                     </div>
                                     <a href="#!" class="team-inner-img">
                                         <img src="{{ asset('storage/'.$p->profil) }} " class="rounded-circle" alt="...">

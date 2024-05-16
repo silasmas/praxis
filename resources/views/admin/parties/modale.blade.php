@@ -25,21 +25,21 @@
                                 <i tabindex="0" class="fa fa-info-circle text-gray" data-toggle="tooltip"
                                     data-container="body" title="Le nom que du professeur"></i>
                             </label>
-                            <input name="nom" id="nom" type="text" class="form-control" placeholder="" value="">
+                            <input name="nom" id="nom" type="text" class="form-control" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label>Prenom
                                 <i tabindex="0" class="fa fa-info-circle text-gray" data-toggle="tooltip"
                                     data-container="body" title="Le prenom du professeur"></i>
                             </label>
-                            <input name="prenom" id="prenom" type="text" class="form-control" placeholder="" value="">
+                            <input name="prenom" id="prenom" type="text" class="form-control" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label>Titre
                                 <i tabindex="0" class="fa fa-info-circle text-gray" data-toggle="tooltip"
                                     data-container="body" title="Le titre du professeur chez praxis"></i>
                             </label>
-                            <input name="titre" id="titre" type="text" class="form-control" placeholder="" value="">
+                            <input name="titre" id="titre" type="text" class="form-control" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label>Facebook
@@ -88,7 +88,7 @@
                                 <i tabindex="0" class="fa fa-info-circle text-gray" data-toggle="tooltip"
                                     data-container="body" title="La biographie du professeur"></i>
                             </label>
-                            <textarea name="biographie" id="biographie" class="form-control" rows="3">
+                            <textarea name="biographie" id="biographie" class="form-control" rows="3" required>
 
                         </textarea>
 
