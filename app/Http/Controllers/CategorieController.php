@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\categorie;
 use Illuminate\Http\Request;
-use App\Http\Requests\UpdatecategorieRequest;
+use Illuminate\Support\Facades\Validator;
 
 class CategorieController extends Controller
 {
@@ -30,19 +30,27 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $request->validate([
-            'nom' => ['required', 'string', 'max:255'],
+        // $request->validate([
+        //     'nom' => ['required', 'string', 'max:255','unique:'.categorie::class],
+        // ]);
+        $validator = Validator::make($request->all(), [
+            'nom' => ['required', 'string', 'max:255', 'unique:categories'],
         ]);
-        $rep = categorie::create([
-            'nom' => $request->nom,
-            'description' => $request->description,
-        ]);
-
-        if ($rep) {
-            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi"]);
+        // dd($validator->fails());
+        if ($validator->fails()) {
+            return response()->json(['reponse' => false, 'msg' => "Erreur de validation", 'errors' => $validator->errors()->all()], 422);
         } else {
-            return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
+            $rep = categorie::create([
+                'nom' => $request->nom,
+                'description' => $request->description,
+            ]);
 
+            if ($rep) {
+                return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi"]);
+            } else {
+                return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
+
+            }
         }
     }
 
@@ -54,7 +62,7 @@ class CategorieController extends Controller
         $cat = categorie::find($id);
         // dd($cat->message);
         if ($cat) {
-            return response()->json(['reponse' => true, 'msg' => "Catégorie trouvée",'data' => $cat]);
+            return response()->json(['reponse' => true, 'msg' => "Catégorie trouvée", 'data' => $cat]);
         } else {
             return response()->json(['reponse' => false, 'msg' => "Erreur."]);
 
@@ -75,9 +83,9 @@ class CategorieController extends Controller
     public function update(Request $request)
     {
         // dd($request->id);
-        $categorie=categorie::find($request->id);
-        $categorie->nom!=$request->nom?$categorie->nom=$request->nom:$categorie->nom;
-        $categorie->description!=$request->description?$categorie->description=$request->description:$categorie->description;
+        $categorie = categorie::find($request->id);
+        $categorie->nom != $request->nom ? $categorie->nom = $request->nom : $categorie->nom;
+        $categorie->description != $request->description ? $categorie->description = $request->description : $categorie->description;
         // dd($categorie->categorieil);
         $categorie->save();
         if ($categorie) {
@@ -93,7 +101,7 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
-        $categorie=categorie::find($id);
+        $categorie = categorie::find($id);
 
         $categorie->delete();
         if ($categorie) {

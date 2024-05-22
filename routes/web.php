@@ -49,10 +49,11 @@ Route::middleware('auth')->group(function () {
     Route::get('editProf/{id}', [EnseignantController::class, 'show_admin'])->name('editProf');
     Route::get('viewMsg/{id}', [EnseignantController::class, 'show_msg'])->name('viewMsg');
     Route::get('editCat/{id}', [CategorieController::class, 'show'])->name('editCat');
+    Route::get('editeGalerie/{id}', [ActiviteController::class, 'show'])->name('editeGalerie');
 
     Route::post('updateProf', [EnseignantController::class, 'update'])->name('updateProf');
     Route::post('updateCat', [CategorieController::class, 'update'])->name('updateCat');
-
+    Route::post('updateGal', [ActiviteController::class, 'update'])->name('updateGal');
 
     Route::post('/addProf', [EnseignantController::class, 'storeProf'])->name('addProf');
     Route::post('/addCategorie', [CategorieController::class, 'store'])->name('addCategorie');

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\activite;
-use Illuminate\Http\Request;
-use App\Http\Requests\UpdateactiviteRequest;
 use App\Models\categorie;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class ActiviteController extends Controller
@@ -15,8 +14,8 @@ class ActiviteController extends Controller
      */
     public function index()
     {
-        $categories=categorie::get();
-        $galeries=activite::get();
+        $categories = categorie::get();
+        $galeries = activite::get();
         foreach ($galeries as $image) {
             $path1 = public_path('storage/' . $image->img1);
             $path2 = public_path('storage/' . $image->img2);
@@ -35,7 +34,7 @@ class ActiviteController extends Controller
             if (File::exists($path2)) {
                 $imageSize = File::size($path2);
                 // $image->img2 = round($imageSize / 1024, 2);
-                 $image->path2 = round($imageSize / (1024 * 1024), 2);
+                $image->path2 = round($imageSize / (1024 * 1024), 2);
             } else {
                 $image->path2 = 0;
                 // $image->sizeInMB = 0;
@@ -66,7 +65,7 @@ class ActiviteController extends Controller
             }
         }
 
-        return view("admin.pages.dashboard",compact('categories','galeries'));
+        return view("admin.pages.dashboard", compact('categories', 'galeries'));
     }
 
     /**
@@ -84,26 +83,26 @@ class ActiviteController extends Controller
     {
         $request->validate([
             'titre' => ['required', 'string', 'max:255'],
-            'date' => ['required', 'string','date'],
+            'date' => ['required', 'string', 'date'],
             'categorie' => ['required', 'string'],
             'img1' => ['required'],
         ]);
         $file = $request->file('img1');
-        $file2 = $request->file('img2');
-        $file3 = $request->file('img3');
-        $file4 = $request->file('img4');
-        $file5 = $request->file('img5');
+        // $file2 = $request->file('img2');
+        // $file3 = $request->file('img3');
+        // $file4 = $request->file('img4');
+        // $file5 = $request->file('img5');
 
         $img1 = $file == '' ? '' : 'galerie/' . time() . '.' . $file->getClientOriginalName();
         $file == '' ? '' : $file->move('storage/galerie', $img1);
-        $img2 = $file2 == '' ? '' : 'galerie/' . time() . '.' . $file2->getClientOriginalName();
-        $file2 == '' ? '' : $file2->move('storage/galerie', $img2);
-        $img3 = $file3 == '' ? '' : 'galerie/' . time() . '.' . $file3->getClientOriginalName();
-        $file3 == '' ? '' : $file3->move('storage/galerie', $img3);
-        $img4 = $file4 == '' ? '' : 'galerie/' . time() . '.' . $file4->getClientOriginalName();
-        $file4 == '' ? '' : $file4->move('storage/galerie', $img4);
-        $img5 = $file5 == '' ? '' : 'galerie/' . time() . '.' . $file5->getClientOriginalName();
-        $file5 == '' ? '' : $file5->move('storage/galerie', $img5);
+        // $img2 = $file2 == '' ? '' : 'galerie/' . time() . '.' . $file2->getClientOriginalName();
+        // $file2 == '' ? '' : $file2->move('storage/galerie', $img2);
+        // $img3 = $file3 == '' ? '' : 'galerie/' . time() . '.' . $file3->getClientOriginalName();
+        // $file3 == '' ? '' : $file3->move('storage/galerie', $img3);
+        // $img4 = $file4 == '' ? '' : 'galerie/' . time() . '.' . $file4->getClientOriginalName();
+        // $file4 == '' ? '' : $file4->move('storage/galerie', $img4);
+        // $img5 = $file5 == '' ? '' : 'galerie/' . time() . '.' . $file5->getClientOriginalName();
+        // $file5 == '' ? '' : $file5->move('storage/galerie', $img5);
 
         $rep = activite::create([
             'titre' => $request->titre,
@@ -111,10 +110,6 @@ class ActiviteController extends Controller
             'categorie_id' => $request->categorie,
             'description' => $request->description,
             'img1' => $img1,
-            'img2' => $img2,
-            'img3' => $img3,
-            'img4' => $img4,
-            'img5' => $img5,
         ]);
 
         if ($rep) {
@@ -128,9 +123,16 @@ class ActiviteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(activite $activite)
+    public function show($id)
     {
-        //
+        $cat = activite::find($id);
+        // dd($cat->message);
+        if ($cat) {
+            return response()->json(['reponse' => true, 'msg' => "Galerie trouvée", 'data' => $cat]);
+        } else {
+            return response()->json(['reponse' => false, 'msg' => "Erreur."]);
+
+        }
     }
 
     /**
@@ -144,9 +146,29 @@ class ActiviteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateactiviteRequest $request, activite $activite)
+    public function update(Request $request)
     {
-        //
+        $categorie = activite::find($request->id);
+        $categorie->titre != $request->titre ? $categorie->titre = $request->titre : $categorie->titre;
+        $categorie->date != $request->date ? $categorie->date = $request->date : $categorie->date;
+        $categorie->categorie_id != $request->categorie ? $categorie->categorie_id = $request->categorie : $categorie->categorie_id;
+        $categorie->description != $request->description ? $categorie->description = $request->description : $categorie->description;
+
+        $file = $request->file("img1");
+        // dd($file);
+        if ($file) {
+            $img1 = $file == '' ? '' : 'galerie/' . time() . '.' . $file->getClientOriginalName();
+            $file == '' ? '' : $file->move('storage/galerie', $img1);
+            $categorie->img1 != $img1 ? $categorie->img1 = $img1 : $categorie->img1;
+        }
+        // dd($categorie->categorieil);
+        $categorie->save();
+        if ($categorie) {
+            return response()->json(['reponse' => true, 'msg' => "Modification réussie"]);
+        } else {
+            return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
+
+        }
     }
 
     /**
@@ -156,9 +178,9 @@ class ActiviteController extends Controller
     {
         $parts = explode("$", $id, 3);
         // dd($parts[0]);
-        $categorie=activite::where('id', $parts[0])->update([$parts[1] => null]);;
+        // $categorie = activite::where('id', $parts[0])->update([$parts[1] => null]);
+        $categorie =Activite::where('id',$parts[0])->delete();
 
-    
         if ($categorie) {
             return response()->json(['reponse' => true, 'msg' => "Suppression réussie"]);
         } else {

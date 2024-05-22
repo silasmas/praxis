@@ -40,7 +40,7 @@
                             <div class="form-label-group">
                                 <label for="for_youth">La catégorie ?
                                 </label>
-                                <select name="categorie" class="custom-select" id="categorie" required="">
+                                <select name="categorie" class="custom-select" id="categorieGal" required="">
                                 @forelse ($categories as $cat)
                                     <option value="{{ $cat->id }}">{{ $cat->nom }}</option>
                                     @empty
@@ -54,42 +54,6 @@
                             {{-- <input type="file" class="custom-file-input is-invalid" name="profil" id="profil"> --}}
                             <input name="img1" type="file" class="custom-file-input is-invalid" id="img1" multiple>
                             <label class="custom-file-label" for="profil">choisissez le fichier</label>
-                            <div class="invalid-feedback">
-                                <i class="fa fa-exclamation-circle fa-fw"></i> Désolé, l'image doit avoir la taille
-                                551X551 px et la taiile moins de 1Mb.
-                            </div>
-                        </div>
-                        <div class="custom-file">
-                            {{-- <input type="file" class="custom-file-input is-invalid" name="profil" id="profil"> --}}
-                            <input name="img2" type="file" class="custom-file-input is-invalid" id="img2" multiple>
-                            <label class="custom-file-label" for="img2">choisissez le fichier</label>
-                            <div class="invalid-feedback">
-                                <i class="fa fa-exclamation-circle fa-fw"></i> Désolé, l'image doit avoir la taille
-                                551X551 px et la taiile moins de 1Mb.
-                            </div>
-                        </div>
-                        <div class="custom-file">
-                            {{-- <input type="file" class="custom-file-input is-invalid" name="profil" id="profil"> --}}
-                            <input name="img3" type="file" class="custom-file-input is-invalid" id="img3" multiple>
-                            <label class="custom-file-label" for="img3">choisissez le fichier</label>
-                            <div class="invalid-feedback">
-                                <i class="fa fa-exclamation-circle fa-fw"></i> Désolé, l'image doit avoir la taille
-                                551X551 px et la taiile moins de 1Mb.
-                            </div>
-                        </div>
-                        <div class="custom-file">
-                            {{-- <input type="file" class="custom-file-input is-invalid" name="profil" id="profil"> --}}
-                            <input name="img4" type="file" class="custom-file-input is-invalid" id="img4" multiple>
-                            <label class="custom-file-label" for="img4">choisissez le fichier</label>
-                            <div class="invalid-feedback">
-                                <i class="fa fa-exclamation-circle fa-fw"></i> Désolé, l'image doit avoir la taille
-                                551X551 px et la taiile moins de 1Mb.
-                            </div>
-                        </div>
-                        <div class="custom-file">
-                            {{-- <input type="file" class="custom-file-input is-invalid" name="profil" id="profil"> --}}
-                            <input name="img5" type="file" class="custom-file-input is-invalid" id="img5" multiple>
-                            <label class="custom-file-label" for="img5">choisissez le fichier</label>
                             <div class="invalid-feedback">
                                 <i class="fa fa-exclamation-circle fa-fw"></i> Désolé, l'image doit avoir la taille
                                 551X551 px et la taiile moins de 1Mb.

@@ -46,8 +46,7 @@
                                     <div class="nav nav-tabs">
                                         <a class="nav-link {{ Route::current()->getName()==" admin_articles"?"active":""
                                             }}" href="{{ route('admin_articles') }}">Articles</a>
-                                        <a class="nav-link {{ Route::current()->getName()=="
-                                            admin_activites"?"active":"" }}"
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_activites"?"active":"" }}"
                                             href="{{ route('admin_activites') }}">Activités</a>
                                         <a class="nav-link {{ Route::current()->getName()==" admin_messages"?"active":""
                                             }}" href="{{ route('admin_messages') }}">Messages</a>
@@ -237,6 +236,29 @@
                     var formElement = document.getElementById('formCategorieEdite');
                     addAll(formElement, 'post', 'updateCat','#formCategorieEdite')
                 });
+                $(document).on("submit","#formGalerieEdite", function (e) {
+                        e.preventDefault();
+
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formGalerieEdite');
+
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+                    if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+                    add(formData, 'post', 'updateGal','#formGalerieEdite')
+                });
 
                 function addAll(form, mothode, url,idf) {
                     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -313,9 +335,65 @@
                             }
 
                         },
+                        error: function(xhr, status, error){
+                            alrte("ok")
+                            var errors = xhr.responseJSON.errors;
+                            var errorMessage = '';
+                            $.each(errors, function(key, value){
+                                errorMessage += value + '<br>';
+                            });
+                             // Afficher les erreurs de validation à l'utilisateur
+
+                                Swal.fire({
+                                    title: xhr.msg,
+                                    html: errorMessage,
+                                        icon: 'error'
+                                    })
+                            }
                     });
                 }
 
+                function editeGal(id,root) {
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+
+                    $.ajax({
+                        url:root+'/'+ id,
+                        method: "GET",
+                        success: function(data) {
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                // Remplir les champs du formulaire avec les données reçues
+
+                            $('#titre').val(data.data.titre);
+                            $('#date').val(data.data.date);
+                            $('#categorieGal').val(data.data.categorie_id);
+                            $('#idGal').val(data.data.id);
+
+                            // Changer le texte du bouton
+                            $('#btnGalerieAdd').text('Modifier');
+                            $("#formGalerie").off("submit");
+                            $('#formGalerie').attr('id', 'formGalerieEdite');
+                            // Sélectionner le bouton qui déclenche l'ouverture du modal
+                            var button = $('#btnrondGaledie');
+                                // Simuler un clic sur le bouton pour ouvrir le modal
+                            button.click();
+                            $('#modalGalerieTitle').text("Formulaire pour modifier la galerie");
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+                                // actualiser();
+                            }
+                        },
+                    });
+                }
                 function editeCat(id,root) {
                     Swal.fire({
                         title: 'Merci de patienter...',

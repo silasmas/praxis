@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorearticleRequest;
 use App\Http\Requests\UpdatearticleRequest;
+use App\Models\activite;
 use App\Models\article;
+use App\Models\categorie;
 use App\Models\enseignant;
 
 class ArticleController extends Controller
@@ -24,7 +26,10 @@ class ArticleController extends Controller
     }
     public function activites()
     {
-        return view('pages.activites');
+        $activites = activite::with("categorie")->get();
+        // dd($activites);
+        $categories = categorie::get();
+        return view('pages.activites', compact("categories", "activites"));
     }
     public function teacher()
     {
