@@ -17,7 +17,9 @@ class ArticleController extends Controller
     public function index()
     {
         $profs = enseignant::get();
-        return view('pages.accueil', compact('profs'));
+        $categories = categorie::get();
+        $galeries = activite::with("categorie")->get();
+        return view('pages.accueil', compact('profs', "categories", "galeries"));
     }
     public function about()
     {

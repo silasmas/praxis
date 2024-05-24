@@ -134,19 +134,22 @@
                     <div class="col-lg-8 wow fadeIn" data-wow-delay="400ms">
                         <div class="position-relative h-100 vw-lg-60">
                             <div class="portfolio-slider owl-carousel owl-theme h-100 w-100 ms-lg-8 ms-xxl-16">
-
+                                @forelse ($galeries as $g)
                                 <div class="portfolio-style2">
-                                    <img src="{{ asset('assets/img/portfolio/07.jpg') }}  " alt="...">
+                                    <img src="{{ asset('storage/'.$g->img1) }}  " alt="...">
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">Nos etudiants</a></h3>
-                                            <span class="text-white">Collation</span>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">{{ $g->titre }}</a></h3>
+                                            <span class="text-white">{{ $g->categorie->nom }}</span>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
 
-                                <div class="portfolio-style2">
+                                @endforelse
+
+                                {{-- <div class="portfolio-style2">
                                     <img src="{{ asset('assets/img/portfolio/08.jpg') }}  " alt="...">
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
@@ -177,7 +180,7 @@
                                             <span class="text-white">Professeurs</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div>

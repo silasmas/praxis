@@ -278,7 +278,6 @@
                             'X-CSRF-TOKEN': csrfToken
                         },
                         success: function (data) {
-
                             if (!data.reponse) {
                                 Swal.fire({
                                     title: data.msg,
@@ -295,6 +294,20 @@
                             }
 
                         },
+                        error: function(xhr, status, error){
+                            alrte("ok")
+                            var errors = xhr.responseJSON.errors;
+                            var errorMessage = '';
+                            $.each(errors, function(key, value){
+                                errorMessage += value + '<br>';
+                            });
+                             // Afficher les erreurs de validation à l'utilisateur
+                                Swal.fire({
+                                    title: xhr.msg,
+                                    html: errorMessage,
+                                        icon: 'error'
+                                    })
+                            }
                     });
                 }
 
@@ -343,7 +356,6 @@
                                 errorMessage += value + '<br>';
                             });
                              // Afficher les erreurs de validation à l'utilisateur
-
                                 Swal.fire({
                                     title: xhr.msg,
                                     html: errorMessage,
