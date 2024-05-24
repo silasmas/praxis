@@ -38,7 +38,7 @@ class CategorieController extends Controller
         ]);
         // dd($validator->fails());
         if ($validator->fails()) {
-            return response()->json(['reponse' => false, 'msg' => "Erreur de validation", 'errors' => $validator->errors()->all()], 422);
+            return response()->json(['reponse' => false, 'msg' => "Erreur de validation", 'errors' => $validator->errors()->all()]);
         } else {
             $rep = categorie::create([
                 'nom' => $request->nom,

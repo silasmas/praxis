@@ -279,8 +279,12 @@
                         },
                         success: function (data) {
                             if (!data.reponse) {
+                                var errorMessage = '';
+                            $.each(data.errors, function(key, value){
+                                errorMessage += value + '<br>';
+                            });
                                 Swal.fire({
-                                    title: data.msg,
+                                    title: data.msg+" : "+errorMessage,
                                     icon: 'error'
                                 })
                             } else {
