@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade " id="card-profile">
-                            <h5 class="card-title"> Special title treatment </h5>
+                            <h5 class="card-title"> La galerie des activités </h5>
                             <div class="row pswp-gallery">
                                 <!-- grid column -->
 

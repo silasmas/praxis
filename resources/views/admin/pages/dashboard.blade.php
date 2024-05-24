@@ -299,7 +299,7 @@
 
                         },
                         error: function(xhr, status, error){
-                            alrte("ok")
+                            // alerte("ok")
                             var errors = xhr.responseJSON.errors;
                             var errorMessage = '';
                             $.each(errors, function(key, value){
@@ -353,7 +353,7 @@
 
                         },
                         error: function(xhr, status, error){
-                            alrte("ok")
+                            // alrte("ok")
                             var errors = xhr.responseJSON.errors;
                             var errorMessage = '';
                             $.each(errors, function(key, value){
