@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\activite;
+use App\Models\article;
 use App\Models\categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -73,7 +74,8 @@ class ActiviteController extends Controller
      */
     public function create()
     {
-        //
+        $articles = article::get();
+        return view("admin.pages.dashboard", compact('articles'));
     }
 
     /**
@@ -179,7 +181,7 @@ class ActiviteController extends Controller
         $parts = explode("$", $id, 3);
         // dd($parts[0]);
         // $categorie = activite::where('id', $parts[0])->update([$parts[1] => null]);
-        $categorie =Activite::where('id',$parts[0])->delete();
+        $categorie = Activite::where('id', $parts[0])->delete();
 
         if ($categorie) {
             return response()->json(['reponse' => true, 'msg' => "Suppression réussie"]);

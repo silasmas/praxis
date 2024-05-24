@@ -95,9 +95,9 @@
                                                     class="img-link" data-size="600x450">
                                                     <span class="tile tile-circle bg-danger"><span
                                                             class="oi oi-eye"></span></span>
-                                                    <span class="img-caption d-none">{{ $gal->titre }}</span></a>
+                                                    <span class="img-caption d-none">{{ $gal->titre." ".$gal->date }}</span></a>
                                                 <div class="figure-action">
-                                                    <a href="#" class="btn btn-block btn-sm btn-primary">Voir en Details</a>
+                                                    <a href="#" class="btn btn-block btn-sm btn-primary">Voir</a>
                                                 </div>
                                             </div><!-- /.figure-img -->
                                             <!-- .figure-caption -->

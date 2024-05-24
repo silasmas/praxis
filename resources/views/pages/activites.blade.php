@@ -32,6 +32,8 @@
                                 <div class="h-100 d-table">
                                     <div class="d-table-cell align-bottom">
                                         <span class="text-uppercase display-31 d-block mb-1 font-weight-600 text-white">{{ $a->titre }}</span>
+                                        <span class="text-white">{{ " date : ".$a->getDateAtAttributes($a->date) }}</span>
+
                                         <h3 class="mb-0 h5"><a href="#!" class="text-white">{{ $a->categorie->nom }}</a></h3>
                                     </div>
                                 </div>

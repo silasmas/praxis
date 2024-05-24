@@ -10,7 +10,7 @@ class activite extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $dates = ['ate_at'];
+    protected $dates = ['created_at', 'date'];
     protected $table = 'activites';
     public function getCreatedAtAttribute($value)
     {
@@ -19,6 +19,10 @@ class activite extends Model
     public function getDateAtAttribute($value)
     {
         return \Carbon\Carbon::parse($value)->format('d-m-Y à H:i:s');
+    }
+    public function getDateAtAttributes($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('d-m-Y');
     }
     public function categorie()
     {

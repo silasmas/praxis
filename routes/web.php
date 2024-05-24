@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/admin_articles', [ArticleController::class, 'index'])->name('admin_articles');
+    Route::get('/admin_articles', [ArticleController::class, 'create'])->name('admin_articles');
     Route::get('/admin_profs', [EnseignantController::class, 'index'])->name('admin_profs');
     Route::get('/admin_messages', [ContactController::class, 'index'])->name('admin_messages');
     Route::get('/admin_activites', [ActiviteController::class, 'index'])->name('admin_activites');

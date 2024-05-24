@@ -140,7 +140,8 @@
                                     <div class="portfolio-inner">
                                         <div class="portfolio-overlay"></div>
                                         <div class="portfolio-text">
-                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">{{ $g->titre }}</a></h3>
+                                            <h3 class="h4 mb-1"><a href="{{ route('activites') }}" class="text-white">{{ $g->titre }} </a></h3>
+                                            <span class="text-white">{{ " date : ".$g->getDateAtAttributes($g->date) }}</span><br>
                                             <span class="text-white">{{ $g->categorie->nom }}</span>
                                         </div>
                                     </div>

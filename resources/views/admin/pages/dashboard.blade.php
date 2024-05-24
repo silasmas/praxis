@@ -50,8 +50,7 @@
                                             href="{{ route('admin_activites') }}">Activités</a>
                                         <a class="nav-link {{ Route::current()->getName()==" admin_messages"?"active":""
                                             }}" href="{{ route('admin_messages') }}">Messages</a>
-                                        <a class="nav-link {{ Route::current()->getName()=="
-                                            admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}"
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}"
                                             href="{{ route('admin_profs') }}">Enseignants</a>
                                         <a class="nav-link {{ Route::current()->getName()=="
                                             admin_neswsletter"?"active":"" }}"
