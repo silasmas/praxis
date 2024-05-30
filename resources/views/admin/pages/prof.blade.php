@@ -72,7 +72,22 @@
      $("#formProf").on("submit", function (e) {
         e.preventDefault();
         var formElement = document.getElementById('formProf');
-        add(formElement, 'POST', 'addProf',"#formProf")
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+                    // Vérifier si un fichier a été sélectionné
+                            if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+        add(formData, 'POST', 'addProf',"#formProf")
         });
         $(document).on("submit","#formProfEdite", function (e) {
             e.preventDefault();
