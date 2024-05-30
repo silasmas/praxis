@@ -135,3 +135,150 @@
     </div><!-- /grid row -->
 
 </div><!-- /.section-block -->
+@push('scripts')
+<script>
+                $("#formCategorie").on("submit", function (e) {
+                    e.preventDefault();
+                    var formElement = document.getElementById('formCategorie');
+                    addAll(formElement, 'POST', 'addCategorie',"#formCategorie")
+                });
+                $(document).on("submit","#formGalerie", function (e) {
+                    e.preventDefault();
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formGalerie');
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+
+                    // Vérifier si un fichier a été sélectionné
+                            if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+                    add(formData, 'post', 'addGalerie','#formGalerie')
+                });
+                $(document).on("submit","#formCategorieEdite", function (e) {
+                        e.preventDefault();
+
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formCategorieEdite');
+                    addAll(formElement, 'post', 'updateCat','#formCategorieEdite')
+                });
+                $(document).on("submit","#formGalerieEdite", function (e) {
+                        e.preventDefault();
+
+                                // Sélectionner le formulaire par son ID
+                    var formElement = document.getElementById('formGalerieEdite');
+
+                    // Créer un objet FormData à partir de l'élément de formulaire
+                    var formData = new FormData(formElement);
+
+                    // Accéder au champ de type file
+                    var fileInput = formElement.querySelector('input[type="file"]');
+                    if (fileInput.files.length > 0) {
+                                var file = fileInput.files[0];
+                                console.log("Nom du fichier : " + file.name);
+                                console.log("Taille du fichier : " + file.size);
+                                console.log("Type MIME du fichier : " + file.type);
+
+                                // Ajouter le champ de type file à l'objet FormData
+                                formData.append('file', file);
+                                console.log("for : " + formData);
+                            }
+                    add(formData, 'post', 'updateGal','#formGalerieEdite')
+                });
+                function editeGal(id,root) {
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+
+                    $.ajax({
+                        url:root+'/'+ id,
+                        method: "GET",
+                        success: function(data) {
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                // Remplir les champs du formulaire avec les données reçues
+
+                            $('#titre').val(data.data.titre);
+                            $('#date').val(data.data.date);
+                            $('#categorieGal').val(data.data.categorie_id);
+                            $('#idGal').val(data.data.id);
+
+                            // Changer le texte du bouton
+                            $('#btnGalerieAdd').text('Modifier');
+                            $("#formGalerie").off("submit");
+                            $('#formGalerie').attr('id', 'formGalerieEdite');
+                            // Sélectionner le bouton qui déclenche l'ouverture du modal
+                            var button = $('#btnrondGaledie');
+                                // Simuler un clic sur le bouton pour ouvrir le modal
+                            button.click();
+                            $('#modalGalerieTitle').text("Formulaire pour modifier la galerie");
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+                                // actualiser();
+                            }
+                        },
+                    });
+                }
+                function editeCat(id,root) {
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+
+                    $.ajax({
+                        url:root+'/'+ id,
+                        method: "GET",
+                        success: function(data) {
+                            if (!data.reponse) {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'error'
+                                })
+                            } else {
+                                // Remplir les champs du formulaire avec les données reçues
+                                console.log(data.data)
+                            $('#nom').val(data.data.nom);
+                            $('#description').val(data.data.description);
+                            $('#idCat').val(data.data.id);
+
+                            // Changer le texte du bouton
+                            $('#btnCategorieAdd').text('Modifier');
+                            $("#formCategorie").off("submit");
+                            $('#formCategorie').attr('id', 'formCategorieEdite');
+                            // Sélectionner le bouton qui déclenche l'ouverture du modal
+                            var button = $('#addCat');
+                                // Simuler un clic sur le bouton pour ouvrir le modal
+                            button.click();
+                            $('#modalCategorieTitle').text("Formulaire pour modifier une catégorie");
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+                                // actualiser();
+                            }
+                        },
+                    });
+                }
+                function getGal(img,idg,url) {
+                    let id=idg+"$"+img;
+                    deleted(id, url)
+                }
+</script>
+@endpush

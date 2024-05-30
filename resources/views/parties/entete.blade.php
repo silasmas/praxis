@@ -38,7 +38,29 @@
     <!-- custom css -->
     <link href="{{ asset('assets/css/custom.css') }} " rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.min.css') }}">
+    <style>
+        #texteComplet {
+    display: none; /* Cacher le texte complet par défaut */
+        }
+        .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+}
 
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+    </style>
 </head>
 
 <body>

@@ -10,8 +10,13 @@ class article extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $dates = ['created_at'];
     public function enseignant()
     {
         return $this->belongsTo(enseignant::class);
+    }
+    public function getCreatedAtAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('d-m-Y');
     }
 }

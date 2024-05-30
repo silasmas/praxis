@@ -7,51 +7,41 @@
         <div class="row justify-content-center wow fadeIn" data-wow-delay="200ms">
             <div class="col-lg-8 col-xl-7 text-center">
                 <div class="testimonial-style1 owl-carousel owl-theme">
-                    <div>
+                    @forelse ($temoignages as $t)
+                    <div class="temoignage">
                         <i class="ti-quote-left display-10 text-secondary mb-4 d-block"></i>
-                        <p class="mb-5 display-28 display-md-26 display-lg-24">
-                           {{ Str::limit(__('info.temoignage.t1'), 500, '...') }}
-
-                           <button type="button" class="butn-style1" data-bs-toggle="modal" data-bs-target="#scrollable">
-                            Lire la suite
-                            </button>
-                        </p>
+                        <div class="textePartiel">
+                            <p class="mb-5 display-28 display-md-26 display-lg-24">
+                                {{ Str::limit($t->message, 400, '...') }}
+                            </p>
+                            @if (strlen($t->message)>400)
+                            <button type="button" class="butn-style1" data-bs-toggle="modal" data-bs-target="#scrollable">
+                                Lire la suite
+                                </button>
+                            @endif
+                        </div>
+                        {{-- <button class="boutonLireSuite">Lire la suite</button> --}}
+                        <div class="texteComplet" style="display: none;">
+                            <p>
+                                {{ $t->message }}
+                            </p>
+                        </div>
+                        {{-- <button class="boutonVoirMoins" style="display: none;">Voir moins</button> --}}
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="me-3">
                                 <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
                             </div>
                             <div class="text-start">
-                                <h6 class="mb-0">Marla Feza</h6>
-                                <span class="small">Etudiante</span>
+                                <h6 class="mb-0">{{ $t->nom }}</h6>
+                                <span class="small">{{ $t->profession }}</span>
                             </div>
                         </div>
                     </div>
-                    {{-- <div>
-                        <i class="ti-quote-left display-10 text-secondary mb-3 d-block"></i>
-                        <p class="mb-5 display-28 display-md-26 display-lg-24">I am really satisfied with my business. Your company is truly upstanding and is behind its product 100%. Thank you for making it painless, pleasant and most of all hassle free!</p>
-                        <div class="d-flex justify-content-center align-items-center mt-4">
-                            <div class="me-3">
-                                <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
-                            </div>
-                            <div class="text-start">
-                                <h6 class="mb-0">Gregi Ambrose</h6>
-                                <span class="small">Languages Researcher</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <i class="ti-quote-left display-10 text-secondary mb-3 d-block"></i>
-                        <p class="mb-5 display-28 display-md-26 display-lg-24">Thanks to business, we've just launched our 5th website! Thank you so much for your help. I don't always clop, but when I do, it's because of business.</p>
-                        <div class="d-flex justify-content-center align-items-center mt-4">
-                            <div class="me-3">
-                                <img width="60" src="{{ asset('assets/img/avatar/default.jpg') }}" class="rounded-circle" alt="...">
-                            </div>
-                            <div class="text-start">
-                                <h6 class="mb-0">Jose Matsuda</h6>
-                                <span class="small">Mystery Shopper</span>
-                            </div>
-                        </div>
-                    </div> --}}
+                @empty
+
+                @endforelse
+
+
                 </div>
             </div>
         </div>

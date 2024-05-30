@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/photoswipe/default-skin/default-skin.css') }} ">
 <link rel="stylesheet" href="{{ asset('assets/admin/vendor/plyr/plyr.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/admin/stylesheets/dataTables/datatables.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/admin/vendor/simplemde/simplemde.min.css') }}">
 
 @endsection
 @section("content")
@@ -44,17 +45,18 @@
                                 <div class="nav-scroller border-bottom">
                                     <!-- .nav -->
                                     <div class="nav nav-tabs">
-                                        <a class="nav-link {{ Route::current()->getName()==" admin_articles"?"active":""
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_articles"?"active":""
                                             }}" href="{{ route('admin_articles') }}">Articles</a>
                                         <a class="nav-link {{ Route::current()->getName()=="admin_activites"?"active":"" }}"
                                             href="{{ route('admin_activites') }}">Activités</a>
-                                        <a class="nav-link {{ Route::current()->getName()==" admin_messages"?"active":""
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_messages"?"active":""
                                             }}" href="{{ route('admin_messages') }}">Messages</a>
                                         <a class="nav-link {{ Route::current()->getName()=="admin_profs"||Route::current()->getName()=="dashboard"?"active":"" }}"
                                             href="{{ route('admin_profs') }}">Enseignants</a>
-                                        <a class="nav-link {{ Route::current()->getName()=="
-                                            admin_neswsletter"?"active":"" }}"
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_neswsletter"?"active":"" }}"
                                             href="{{ route('admin_neswsletter') }}">News letter</a>
+                                        <a class="nav-link {{ Route::current()->getName()=="admin_temoignage"?"active":"" }}"
+                                            href="{{ route('admin_temoignage') }}">Temoignages</a>
                                     </div><!-- /.nav -->
                                 </div><!-- /.nav-scroller -->
                             </header><!-- /.page-title-bar -->
@@ -65,6 +67,7 @@
                             @break
                             @case("admin_articles")
                             @include("admin.pages.articles")
+                            @include("admin.parties.modaleArticle")
                             @break
                             @case("admin_messages")
                             @include("admin.pages.message")
@@ -81,6 +84,10 @@
                             @break
                             @case("admin_neswsletter")
                             @include("admin.pages.newsletter")
+                            @break
+                            @case("admin_temoignage")
+                            @include("admin.pages.temoignages")
+                            @include("admin.parties.modaleTemoignage")
                             @break
 
                             @default
@@ -104,6 +111,8 @@
 <script src="{{ asset('assets/admin/vendor/plyr/plyr.min.js') }}"></script>
 <script src="{{ asset('assets/admin/javascript/pages/photoswipe-demo.js') }} "></script>
 <script src="{{asset('assets/admin/javascript/dataTables/datatables.min.js')}}"></script>
+<script src="{{ asset('assets/admin/vendor/simplemde/simplemde.min.js') }}"></script>
+@stack('scripts')
 <script>
     $(document).ready(function () {
         $('.dataTables-example').DataTable({
@@ -167,97 +176,6 @@
         ]
         });
     });
-
-
-                $("#formCategorie").on("submit", function (e) {
-                        e.preventDefault();
-                        var formElement = document.getElementById('formCategorie');
-                        addAll(formElement, 'POST', 'addCategorie',"#formCategorie")
-                });
-
-                $("#formProf").on("submit", function (e) {
-                        e.preventDefault();
-                        var formElement = document.getElementById('formProf');
-                        add(formElement, 'POST', 'addProf',"#formProf")
-                });
-                $(document).on("submit","#formGalerie", function (e) {
-                        e.preventDefault();
-                                // Sélectionner le formulaire par son ID
-                    var formElement = document.getElementById('formGalerie');
-                    // Créer un objet FormData à partir de l'élément de formulaire
-                    var formData = new FormData(formElement);
-
-                    // Accéder au champ de type file
-                    var fileInput = formElement.querySelector('input[type="file"]');
-
-                // Vérifier si un fichier a été sélectionné
-                            if (fileInput.files.length > 0) {
-                                var file = fileInput.files[0];
-                                console.log("Nom du fichier : " + file.name);
-                                console.log("Taille du fichier : " + file.size);
-                                console.log("Type MIME du fichier : " + file.type);
-
-                                // Ajouter le champ de type file à l'objet FormData
-                                formData.append('file', file);
-                                console.log("for : " + formData);
-                            }
-                    add(formData, 'post', 'addGalerie','#formGalerie')
-                });
-
-                $(document).on("submit","#formProfEdite", function (e) {
-                        e.preventDefault();
-                                // Sélectionner le formulaire par son ID
-                    var formElement = document.getElementById('formProfEdite');
-                    // Créer un objet FormData à partir de l'élément de formulaire
-                    var formData = new FormData(formElement);
-
-                    // Accéder au champ de type file
-                    var fileInput = formElement.querySelector('input[type="file"]');
-
-                // Vérifier si un fichier a été sélectionné
-                            if (fileInput.files.length > 0) {
-                                var file = fileInput.files[0];
-                                console.log("Nom du fichier : " + file.name);
-                                console.log("Taille du fichier : " + file.size);
-                                console.log("Type MIME du fichier : " + file.type);
-
-                                // Ajouter le champ de type file à l'objet FormData
-                                formData.append('file', file);
-                                console.log("for : " + formData);
-                            }
-                    add(formData, 'post', 'updateProf','#formProfEdite')
-                });
-
-                $(document).on("submit","#formCategorieEdite", function (e) {
-                        e.preventDefault();
-
-                                // Sélectionner le formulaire par son ID
-                    var formElement = document.getElementById('formCategorieEdite');
-                    addAll(formElement, 'post', 'updateCat','#formCategorieEdite')
-                });
-                $(document).on("submit","#formGalerieEdite", function (e) {
-                        e.preventDefault();
-
-                                // Sélectionner le formulaire par son ID
-                    var formElement = document.getElementById('formGalerieEdite');
-
-                    // Créer un objet FormData à partir de l'élément de formulaire
-                    var formData = new FormData(formElement);
-
-                    // Accéder au champ de type file
-                    var fileInput = formElement.querySelector('input[type="file"]');
-                    if (fileInput.files.length > 0) {
-                                var file = fileInput.files[0];
-                                console.log("Nom du fichier : " + file.name);
-                                console.log("Taille du fichier : " + file.size);
-                                console.log("Type MIME du fichier : " + file.type);
-
-                                // Ajouter le champ de type file à l'objet FormData
-                                formData.append('file', file);
-                                console.log("for : " + formData);
-                            }
-                    add(formData, 'post', 'updateGal','#formGalerieEdite')
-                });
 
                 function addAll(form, mothode, url,idf) {
                     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -367,202 +285,11 @@
                             }
                     });
                 }
-
-                function editeGal(id,root) {
-                    Swal.fire({
-                        title: 'Merci de patienter...',
-                        icon: 'info'
-                    })
-
-                    $.ajax({
-                        url:root+'/'+ id,
-                        method: "GET",
-                        success: function(data) {
-                            if (!data.reponse) {
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'error'
-                                })
-                            } else {
-                                // Remplir les champs du formulaire avec les données reçues
-
-                            $('#titre').val(data.data.titre);
-                            $('#date').val(data.data.date);
-                            $('#categorieGal').val(data.data.categorie_id);
-                            $('#idGal').val(data.data.id);
-
-                            // Changer le texte du bouton
-                            $('#btnGalerieAdd').text('Modifier');
-                            $("#formGalerie").off("submit");
-                            $('#formGalerie').attr('id', 'formGalerieEdite');
-                            // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#btnrondGaledie');
-                                // Simuler un clic sur le bouton pour ouvrir le modal
-                            button.click();
-                            $('#modalGalerieTitle').text("Formulaire pour modifier la galerie");
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'success'
-                                })
-                                // actualiser();
-                            }
-                        },
-                    });
-                }
-                function editeCat(id,root) {
-                    Swal.fire({
-                        title: 'Merci de patienter...',
-                        icon: 'info'
-                    })
-
-                    $.ajax({
-                        url:root+'/'+ id,
-                        method: "GET",
-                        success: function(data) {
-                            if (!data.reponse) {
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'error'
-                                })
-                            } else {
-                                // Remplir les champs du formulaire avec les données reçues
-                                console.log(data.data)
-                            $('#nom').val(data.data.nom);
-                            $('#description').val(data.data.description);
-                            $('#idCat').val(data.data.id);
-
-                            // Changer le texte du bouton
-                            $('#btnCategorieAdd').text('Modifier');
-                            $("#formCategorie").off("submit");
-                            $('#formCategorie').attr('id', 'formCategorieEdite');
-                            // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#addCat');
-                                // Simuler un clic sur le bouton pour ouvrir le modal
-                            button.click();
-                            $('#modalCategorieTitle').text("Formulaire pour modifier une catégorie");
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'success'
-                                })
-                                // actualiser();
-                            }
-                        },
-                    });
-                }
-
-                function editeAll(id,root) {
-                    Swal.fire({
-                        title: 'Merci de patienter...',
-                        icon: 'info'
-                    })
-
-                    $.ajax({
-                        url:root+'/'+ id,
-                        method: "GET",
-                        success: function(data) {
-                            if (!data.reponse) {
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'error'
-                                })
-                            } else {
-                                // Remplir les champs du formulaire avec les données reçues
-                                console.log(data.data)
-                            $('#nom').val(data.data.nom);
-                            $('#prenom').val(data.data.prenom);
-                            $('#titre').val(data.data.titre);
-                            $('#facebook').val(data.data.fb);
-                            $('#instagram').val(data.data.insta);
-                            $('#youtube').val(data.data.x);
-                            $('#biographie').val(data.data.biographie);
-                            $('#idProf').val(data.data.id);
-                            $('#imgProfil').attr('src', "storage/"+data.data.profil);
-
-                            // Changer le texte du bouton
-                            $('#btnProf').text('Modifier');
-                            $("#formProf").off("submit");
-                            $('#formProf').attr('id', 'formProfEdite');
-                            // Sélectionner le bouton qui déclenche l'ouverture du modal
-                            var button = $('#btnrond');
-                                // Simuler un clic sur le bouton pour ouvrir le modal
-                            button.click();
-                            $('#modalBoardConfigTitle').text("Formulaire pour modifier les info d'un professeur");
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'success'
-                                })
-                                // actualiser();
-                            }
-                        },
-                    });
-                }
-
-
-                function viewMsg(id,root) {
-                    Swal.fire({
-                        title: 'Merci de patienter...',
-                        icon: 'info'
-                    })
-                    // supprimerPopup("modalBoardConfig2");
-
-                    $.ajax({
-                        url:root+'/'+ id,
-                        method: "GET",
-                        success: function(data) {
-                            if (!data.reponse) {
-                                Swal.fire({
-                                    title: data.msg,
-                                    icon: 'error'
-                                })
-                            } else {
-
-                                // Remplir les champs du formulaire avec les données reçues
-                                let dataContainer = document.getElementById('accordion');
-                                let titreModale = document.getElementById('modalBoardConfigTitleMsg');
-                                let titreNbr = document.getElementById('txtnbr');
-                                let responseData = data.data.message;
-                                console.log(responseData.length)
-                                if (responseData.length==0) {
-                                    Swal.fire({
-                                    title: "Aucun message trouvé",
-                                    icon: 'success'
-                                    })
-                                } else {
-                                    // Créer un accordéon pour chaque donnée récupérée
-                                responseData.forEach(function(datas,index) {
-                                console.log(datas)
-                                let card = document.createElement('div');
-                                var title = datas.title;
-                                var content = datas.content;
-
-                                var div = document.createElement('div');
-                                div.innerHTML = "("+ ++index+') Date : '+datas.created_at+'<br/><h2>NOM : ' + datas.nom + '</h2><p><strong> Email : </strong>' + datas.email + '</p><p> <strong>Phone </strong>: ' + datas.phone + '</p><p> <strong>Objet : </strong>' + datas.obje + '</p><p> <strong>Message </strong>: ' + datas.message + '</p><hr>';
-                                titreModale.textContent="Liste des messages envoyé à "+data.data.prenom+" "+data.data.nom
-                                titreNbr.textContent=responseData.length+ " Message(s) trouvé "
-                                dataContainer.appendChild(div);
-                                });
-
-                                // Sélectionner le bouton qui déclenche l'ouverture du modal
-                                var button = $('#btnrond2');
-                                    // Simuler un clic sur le bouton pour ouvrir le modal
-                                button.click();
-                                $('#modalBoardConfigTitle').text("Messages trouvé");
-                                    Swal.fire({
-                                        title: data.msg,
-                                        icon: 'success'
-                                    })
-                                }
-                            }
-                        },
-                    });
-                }
+                //
                 function actualiser() {
                     location.reload();
                 }
-                function getGal(img,idg,url) {
-                    let id=idg+"$"+img;
-                    deleted(id, url)
-                }
+
                 function supprimerPopup(id) {
                     var popup = document.getElementById(id); // Identifier l'élément du pop-up
                     if (popup) {

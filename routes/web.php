@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TemoignageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,8 @@ Route::get('about', [ArticleController::class, 'about'])->name('about');
 Route::get('activites', [ArticleController::class, 'activites'])->name('activites');
 Route::get('teacher', [ArticleController::class, 'teacher'])->name('teacher');
 Route::get('viewteacher/{id}', [EnseignantController::class, 'show'])->name('viewteacher');
-Route::get('viewarticle/{id}', [EnseignantController::class, 'show'])->name('viewarticle');
+Route::get('viewarticle/{id}', [ArticleController::class, 'showArt'])->name('viewarticle');
+Route::get('viewarticleBy/{id}', [ArticleController::class, 'articlesBy'])->name('viewarticleBy');
 Route::get('articles', [ArticleController::class, 'articles'])->name('articles');
 Route::get('contact', [ArticleController::class, 'contact'])->name('contact');
 
@@ -45,22 +47,33 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin_messages', [ContactController::class, 'index'])->name('admin_messages');
     Route::get('/admin_activites', [ActiviteController::class, 'index'])->name('admin_activites');
     Route::get('/admin_neswsletter', [NewsletterController::class, 'index'])->name('admin_neswsletter');
+    Route::get('/admin_temoignage', [TemoignageController::class, 'index'])->name('admin_temoignage');
 
     Route::get('editProf/{id}', [EnseignantController::class, 'show_admin'])->name('editProf');
     Route::get('viewMsg/{id}', [EnseignantController::class, 'show_msg'])->name('viewMsg');
     Route::get('editCat/{id}', [CategorieController::class, 'show'])->name('editCat');
     Route::get('editeGalerie/{id}', [ActiviteController::class, 'show'])->name('editeGalerie');
+    Route::get('editeTemoignage/{id}', [TemoignageController::class, 'show'])->name('editeTemoignage');
+    Route::get('editeArticle/{id}', [ArticleController::class, 'show'])->name('editeArticle');
 
     Route::post('updateProf', [EnseignantController::class, 'update'])->name('updateProf');
     Route::post('updateCat', [CategorieController::class, 'update'])->name('updateCat');
     Route::post('updateGal', [ActiviteController::class, 'update'])->name('updateGal');
+    Route::post('updateTemoignage', [TemoignageController::class, 'update'])->name('updateTemoignage');
+    Route::post('updateArticle', [ArticleController::class, 'update'])->name('updateArticle');
 
     Route::post('/addProf', [EnseignantController::class, 'storeProf'])->name('addProf');
     Route::post('/addCategorie', [CategorieController::class, 'store'])->name('addCategorie');
     Route::post('/addGalerie', [ActiviteController::class, 'store'])->name('addGalerie');
+    Route::post('/addTemoignage', [TemoignageController::class, 'store'])->name('addTemoignage');
+    Route::post('/addArticle', [ArticleController::class, 'store'])->name('addArticle');
 
     Route::get('deleteCat/{id}', [CategorieController::class, 'destroy'])->name('deleteCat');
     Route::get('deleteGalerie/{id}', [ActiviteController::class, 'destroy'])->name('deleteGalerie');
+    Route::get('deleteTemoignage/{id}', [TemoignageController::class, 'destroy'])->name('deleteTemoignage');
+    Route::get('deleteArticle/{id}', [ArticleController::class, 'destroy'])->name('deleteArticle');
+    Route::get('deleteProf/{id}', [EnseignantController::class, 'destroy'])->name('deleteProf');
+    Route::get('deleteProf/{id}', [EnseignantController::class, 'destroy'])->name('deleteProf');
 
 });
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\activite;
-use App\Models\article;
 use App\Models\categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -74,8 +73,7 @@ class ActiviteController extends Controller
      */
     public function create()
     {
-        $articles = article::get();
-        return view("admin.pages.dashboard", compact('articles'));
+
     }
 
     /**

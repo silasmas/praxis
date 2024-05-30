@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateenseignantRequest;
+use App\Models\article;
 use App\Models\contact;
 use App\Models\enseignant;
 use Illuminate\Http\Request;
@@ -96,12 +96,18 @@ class EnseignantController extends Controller
 
         return view("pages.detailteach", compact('prof'));
     }
+    public function showArt($id)
+    {
+        $articles = article::find($id);
+
+        return view("pages.detailteach", compact('articles'));
+    }
     public function show_msg($id)
     {
         $prof = enseignant::with("message")->find($id);
         // dd($prof->message);
         if ($prof) {
-            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi",'data' => $prof]);
+            return response()->json(['reponse' => true, 'msg' => "Enregistrement réussi", 'data' => $prof]);
         } else {
             return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
 
@@ -134,24 +140,23 @@ class EnseignantController extends Controller
     {
         // dd($request);
         // dd($request->file);
-        $prof=enseignant::find($request->id);
+        $prof = enseignant::find($request->id);
         $file = $request->file('profil');
-        $profile="";
-        if($file!=null){
+        $profile = "";
+        if ($file != null) {
             $profile = $file == '' ? '' : 'team/' . time() . '.' . $file->getClientOriginalName();
             $file == '' ? '' : $file->move('storage/team', $profile);
             // dd($profil);
         }
 
-
-        $prof->nom!=$request->nom?$prof->nom=$request->nom:"";
-        $prof->prenom!=$request->prenom?$prof->prenom=$request->prenom:"";
-        $prof->titre!=$request->titre?$prof->titre=$request->titre:"";
-        $prof->biographie!=$request->biographie?$prof->biographie=$request->biographie:"";
-        $prof->x!=$request->youtube?$prof->x=$request->youtube:"";
-        $prof->fb!=$request->facebook?$prof->fb=$request->facebook:"";
-        $prof->insta!=$request->instagram?$prof->insta=$request->instagram:"";
-        $prof->profile!=$profile?$prof->profil=$profile:"";
+        $prof->nom != $request->nom ? $prof->nom = $request->nom : "";
+        $prof->prenom != $request->prenom ? $prof->prenom = $request->prenom : "";
+        $prof->titre != $request->titre ? $prof->titre = $request->titre : "";
+        $prof->biographie != $request->biographie ? $prof->biographie = $request->biographie : "";
+        $prof->x != $request->youtube ? $prof->x = $request->youtube : "";
+        $prof->fb != $request->facebook ? $prof->fb = $request->facebook : "";
+        $prof->insta != $request->instagram ? $prof->insta = $request->instagram : "";
+        $prof->profile != $profile ? $prof->profil = $profile : "";
         // dd($prof->profil);
         $prof->save();
         if ($prof) {
@@ -165,8 +170,14 @@ class EnseignantController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(enseignant $enseignant)
+    public function destroy($id)
     {
-        //
+        $prof = enseignant::where('id', $id)->delete();
+        if ($prof) {
+            return response()->json(['reponse' => true, 'msg' => "Suppression réussie"]);
+        } else {
+            return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
+
+        }
     }
 }

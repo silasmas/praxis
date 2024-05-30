@@ -3,7 +3,10 @@
 <!-- SCROLL TO TOP
 ================================================== -->
 <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-
+<div id="popup" style="display: none;">
+    <div id="popupContent"></div>
+    <button id="closePopup">Fermer</button>
+</div>
 <!-- all js include start -->
 
 <!-- jquery -->
@@ -88,6 +91,31 @@
 <!-- all js include end -->
 
 <script>
+    document.getElementById('scrollable').addEventListener('show.bs.modal', function (event) {
+    var button = event.relatedTarget;
+    var fullTestimony = button.nextElementSibling.querySelector('.texteComplet');
+
+    if (fullTestimony) {
+        document.getElementById('partialTestimony').textContent = fullTestimony.textContent;
+    }
+});
+
+   document.querySelectorAll('.boutonLireSuite').forEach(function(bouton) {
+    bouton.addEventListener('click', function() {
+        var texteComplet = this.nextElementSibling.querySelector('.texteComplet');
+
+        if (texteComplet) {
+            document.getElementById('popupContent').textContent = texteComplet.textContent;
+            document.getElementById('popup').style.display = 'block';
+        }
+    });
+});
+
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+
+
     $("#newsletter").on("submit", function (e) {
             e.preventDefault();
             //  alert("register")

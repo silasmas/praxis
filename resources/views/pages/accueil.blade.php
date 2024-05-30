@@ -206,47 +206,24 @@
                 </div>
 
                 <div class="row g-xl-5 mt-n2-9">
-                    <div class="col-md-6 col-lg-4 mt-2-9 wow fadeIn" data-wow-delay="200ms">
+                    @forelse ($articles as $art)
+                        <div class="col-md-6 col-lg-4 mt-2-9 wow fadeIn" data-wow-delay="200ms">
                         <article class="card card-style8 h-100 border-radius-10">
                             <div class="card-img position-relative">
-                                <img src="{{ asset('assets/img/blog/blog-01.jpg') }}" class="rounded-top-lg" alt="...">
-                                <a href="#!" class="category rounded">business</a>
+                                <img src="{{ asset('storage/'.$art->couverture) }}" class="rounded-top-lg" alt="...">
+                                <a href="#!" class="category rounded">{{ $art->domaine }}</a>
                             </div>
                             <div class="card-body pt-2-0 px-2-0 pb-2-9">
-                                <span class="text-primary mb-2 d-block font-weight-500">June 10, 2021</span>
-                                <h3 class="h5 mb-0 lh-base"><a href="#">Five things you need to know about business today</a></h3>
-                                <a href="#" class="butn-read-more"><i class="ti-arrow-right"></i></a>
+                                <span class="text-primary mb-2 d-block font-weight-500">{{ $art->getCreatedAtAttribute($art->created_at) }}</span>
+                                <h3 class="h5 mb-0 lh-base"><a href="{{ route('viewarticle',['id'=>$art->id]) }}">{{ $art->titre }}</a></h3>
+                                <a href="{{ route('viewarticle',['id'=>$art->id]) }}" class="butn-read-more"><i class="ti-arrow-right"></i></a>
                             </div>
                         </article>
                     </div>
+                    @empty
 
-                    <div class="col-md-6 col-lg-4 mt-2-9 wow fadeIn" data-wow-delay="400ms">
-                        <article class="card card-style8 h-100 border-radius-10">
-                            <div class="card-img position-relative">
-                                <img src="{{ asset('assets/img/blog/blog-02.jpg') }}" class="rounded-top-lg" alt="...">
-                                <a href="#!" class="category rounded">consulting</a>
-                            </div>
-                            <div class="card-body p-2-0 p-xl-2-4">
-                                <span class="text-primary mb-2 d-block font-weight-500">June 8, 2021</span>
-                                <h3 class="h5 mb-0 lh-base"><a href="#">Eliminate your fears and doubts about business</a></h3>
-                                <a href="#" class="butn-read-more"><i class="ti-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+                    @endforelse
 
-                    <div class="col-md-6 col-lg-4 mt-2-9 wow fadeIn" data-wow-delay="600ms">
-                        <article class="card card-style8 h-100 border-radius-10">
-                            <div class="card-img position-relative">
-                                <img src="{{ asset('assets/img/blog/blog-03.jpg') }}" class="rounded-top-lg" alt="...">
-                                <a href="#!" class="category rounded">finance</a>
-                            </div>
-                            <div class="card-body p-2-0 p-xl-2-4">
-                                <span class="text-primary mb-2 d-block font-weight-500">June 6, 2021</span>
-                                <h3 class="h5 mb-0 lh-base"><a href="#">Understanding the background of business</a></h3>
-                                <a href="#" class="butn-read-more"><i class="ti-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
                 </div>
             </div>
 
