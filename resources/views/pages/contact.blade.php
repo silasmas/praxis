@@ -58,7 +58,7 @@
                     <div class="col-lg-10 wow fadeIn" data-wow-delay="400ms">
                         <div class="primary-shadow bg-white p-1-6 p-sm-2-9 rounded z-index-9 position-relative">
                             <h2 class="mb-1-9">Ecrivez-nous</h2>
-                            <form class="contact quform" id="formContact">
+                            <form class="contact quform" id="formContact" onsubmit="event.preventDefault();add('#formContact', 'POST', '../addNewMessage')">
                                 <div class="quform-elements">
                                     <div class="row">
                                         <!-- Begin Text input element -->
