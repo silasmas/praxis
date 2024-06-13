@@ -79,7 +79,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->message);
+        dd($request->message);
         $request->validate([
             'titre' => ['required', 'string', 'max:255'],
             'contenu' => ['required'],
@@ -136,7 +136,7 @@ class ArticleController extends Controller
             ->orderBy('id', 'asc')
             ->first();
 
-        return view('pages.detailarticle', compact("article", "articles", "categories", "categoriesCount","avant","apres"));
+        return view('pages.detailarticle', compact("article", "articles", "categories", "categoriesCount", "avant", "apres"));
 
     }
 
