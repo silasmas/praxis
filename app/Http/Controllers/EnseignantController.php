@@ -33,7 +33,7 @@ class EnseignantController extends Controller
      */
     public function storeProf(Request $request)
     {
-        
+
         $request->validate([
             'nom' => ['required', 'string', 'max:255'],
             'prenom' => ['required', 'string', 'max:255'],
