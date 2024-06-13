@@ -79,7 +79,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->contenu);
+        // dd($request->contenu);
         $request->validate([
             'titre' => ['required', 'string', 'max:255'],
             'contenu' => ['required'],
