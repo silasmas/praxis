@@ -64,6 +64,8 @@
                             @switch(Route::current()->getName())
                             @case("dashboard")
                             @include("admin.pages.prof")
+                            @include("parties.modale")
+                            @include("admin.parties.modalemsg")
                             @break
                             @case("admin_articles")
                             @include("admin.pages.articles")
